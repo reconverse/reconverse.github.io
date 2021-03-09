@@ -6,6 +6,7 @@ base_url: https://www.reconverse.org
 output_dir: "docs"
 theme: theme.css
 navbar:
+  logo: images/logo.png
   right:
     - text: "Home"
       href: index.html

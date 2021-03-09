@@ -1,5 +1,5 @@
 ---
-title: "About the reconverse"
+title: "About"
 description: |
   Details about the reconverse
 ---
@@ -7,3 +7,31 @@ description: |
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+# Overview
+Members of the [R Epidemics Consortium](https://www.repidemicsconsortium.org/)
+have, for many years, been creating resources and software that could be used
+to inform the response to disease outbreaks, health emergencies and
+humanitarian crises. During this time, as well as providing training materials,
+running workshops and having members deployed to the field to help with data
+analytics, a variety of [R](https://www.r-project.org/) packages have been
+created to enable analysts to quickly solve the problems they have (e.g.
+[epicontacts](https://www.repidemicsconsortium.org/epicontacts/),
+[epiestim](https://github.com/mrc-ide/EpiEstim),
+[incidence](https://www.repidemicsconsortium.org/incidence/)).
+
+Since the early days of RECON,  the landscape of packages for the analysis of
+epidemics has grown, evolved and diversified, benefiting from feedback and
+contributions from our members as well as other groups. While such organic
+growth was needed and resulted in overall improvements of available tools, it
+has also led to a less consistent software landscape, with several packages
+overlapping or duplicating efforts, limited interoperability, and varying coding
+and development standards.  Being aware that fragmented software landscapes can
+be the bane of data scientists [e.g. @excoffier_computer_2006],  we
+realise there is also benefit to having a coherent and composable set of
+packages for users. The **reconverse** aims to address this. Much like the
+[tidyverse](https://www.tidyverse.org/) is "an opinionated collection of R
+packages designed for data science", the reconverse aims to be an opinionated
+ecosystem of packages for Outbreak Analytics.
+
+# Packages

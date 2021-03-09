@@ -2,18 +2,18 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About the reconverse",
+      "title": "About",
       "description": "Details about the reconverse",
       "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2021-03-09T11:49:28+00:00"
+      "contents": "\nOverview\nMembers of the R Epidemics Consortium have, for many years, been creating resources and software that could be used to inform the response to disease outbreaks, health emergencies and humanitarian crises. During this time, as well as providing training materials, running workshops and having members deployed to the field to help with data analytics, a variety of R packages have been created to enable analysts to quickly solve the problems they have (e.g. epicontacts, epiestim, incidence).\nSince the early days of RECON, the landscape of packages for the analysis of epidemics has grown, evolved and diversified, benefiting from feedback and contributions from our members as well as other groups. While such organic growth was needed and resulted in overall improvements of available tools, it has also led to a less consistent software landscape, with several packages overlapping or duplicating efforts, limited interoperability, and varying coding and development standards. Being aware that fragmented software landscapes can be the bane of data scientists [e.g. @excoffier_computer_2006], we realise there is also benefit to having a coherent and composable set of packages for users. The reconverse aims to address this. Much like the tidyverse is “an opinionated collection of R packages designed for data science”, the reconverse aims to be an opinionated ecosystem of packages for Outbreak Analytics.\nPackages\n\n\n\n",
+      "last_modified": "2021-03-09T13:57:44+00:00"
     },
     {
       "path": "blog.html",
       "title": "Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-03-09T11:49:28+00:00"
+      "last_modified": "2021-03-09T13:57:45+00:00"
     },
     {
       "path": "index.html",
@@ -21,7 +21,7 @@
       "description": "A coherent ecosystem  of R packages for outbreak analytics\n",
       "author": [],
       "contents": "\nLatest news:\nMarch 9, 2021 - Welcome to the reconverse\nAcknowledgments\nThis is a website is made with the distill package and uses a custom theme by Desirée De Leon.\n\n\n\n",
-      "last_modified": "2021-03-09T11:49:29+00:00"
+      "last_modified": "2021-03-09T13:57:45+00:00"
     }
   ],
   "collections": ["posts/posts.json"]
