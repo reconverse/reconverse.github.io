@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
+  <url>
+    <loc>https://www.reconverse.org/about.html</loc>
+    <lastmod>2021-03-09T11:25:26+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.reconverse.org/blog.html</loc>
+    <lastmod>2021-03-09T11:19:22+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.reconverse.org/</loc>
+    <lastmod>2021-03-09T11:27:30+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.reconverse.org/posts/2021-03-09-welcome-to-the-reconverse/</loc>
+    <lastmod>2021-03-09T11:36:27+00:00</lastmod>
+  </url>
+</urlset>

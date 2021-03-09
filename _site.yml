@@ -1,0 +1,21 @@
+name: "reconverse.github.io"
+title: "Reconverse"
+description: |
+  A coherent ecosystem  of R packages for outbreak analytics.
+base_url: https://www.reconverse.org
+output_dir: "docs"
+theme: theme.css
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "Blog"
+      href: blog.html
+    - text: "About"
+      href: about.html
+    - icon: fa fa-rss
+      href: blog.xml
+  source_url: https://github.com/reconverse/reconverse.github.io
+rss:
+  full_content: true
+output: distill::distill_article

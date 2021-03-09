@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:distill="https://distill.pub/journal/" version="2.0">
+  <channel>
+    <title>Reconverse</title>
+    <link>https://www.reconverse.org</link>
+    <atom:link href="https://www.reconverse.org/blog.xml" rel="self" type="application/rss+xml"/>
+    <description>A coherent ecosystem  of R packages for outbreak analytics.
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Tue, 09 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Welcome to the reconverse</title>
+      <dc:creator>Thibaut Jombart</dc:creator>
+      <dc:creator>Tim Taylor</dc:creator>
+      <link>https://www.reconverse.org/posts/2021-03-09-welcome-to-the-reconverse</link>
+      <description>
+
+
+&lt;p&gt;Members of the &lt;a href="https://www.repidemicsconsortium.org/"&gt;R Epidemics Consortium&lt;/a&gt; have, for many years, been creating resources and software that could be used to inform the response to disease outbreaks, health emergencies and humanitarian crises. During this time, as well as providing training materials, running workshops and having members deployed to the field to help with data analytics, a variety of &lt;a href="https://www.r-project.org/"&gt;R&lt;/a&gt; packages have been created to enable analysts to quickly solve the problems they have (e.g. &lt;a href="https://www.repidemicsconsortium.org/epicontacts/"&gt;epicontacts&lt;/a&gt;, &lt;a href="https://github.com/mrc-ide/EpiEstim"&gt;epiestim&lt;/a&gt;, &lt;a href="https://www.repidemicsconsortium.org/incidence/"&gt;incidence&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Since the early days of RECON, the landscape of packages for the analysis of epidemics has grown, evolved and diversified, benefiting from feedback and contributions from our members as well as other groups. While such organic growth was needed and resulted in overall improvements of available tools, it has also led to a less consistent software landscape, with several packages overlapping or duplicating efforts, limited interoperability, and varying coding and development standards. Being aware that fragmented software landscapes can be the bane of data scientists &lt;span class="citation"&gt;(e.g. Excoffier and Heckel 2006)&lt;/span&gt;, we realise there is also benefit to having a coherent and composable set of packages for users. The &lt;strong&gt;reconverse&lt;/strong&gt; aims to address this. Much like the &lt;a href="https://www.tidyverse.org/"&gt;tidyverse&lt;/a&gt; is “an opinionated collection of R packages designed for data science”, the reconverse aims to be an opinionated ecosystem of packages for Outbreak Analytics.&lt;/p&gt;
+&lt;p&gt;Completing the &lt;em&gt;reconverse&lt;/em&gt; will take years, and we intend for our first steps in this long journey to be taken carefully. However, we are not starting this journey empty-handed. With years of experience developing packages and extensive feedback from a wide range of users, our roadmap is unfolding with increasing clarity. Over the coming months we will be introducing some of the packages we view as the building blocks of the &lt;em&gt;reconverse&lt;/em&gt;. In these exciting times, your input, feedback, criticisms, requests, and contributions will be more valuable than ever, as they will be instrumental in shaping the future of the &lt;em&gt;reconverse&lt;/em&gt; – making it &lt;strong&gt;your&lt;/strong&gt; reconverse.&lt;/p&gt;
+&lt;p&gt;Exciting times and challenges are ahead of us, and we are looking forward to taking you on board this epic journey.&lt;/p&gt;
+&lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div id="refs" class="references hanging-indent"&gt;
+&lt;div id="ref-excoffier_computer_2006"&gt;
+&lt;p&gt;Excoffier, Laurent, and Gerald Heckel. 2006. “Computer Programs for Population Genetics Data Analysis: A Survival Guide.” &lt;em&gt;Nature Reviews Genetics&lt;/em&gt; 7 (10): 745–58. &lt;a href="https://doi.org/10.1038/nrg1904"&gt;https://doi.org/10.1038/nrg1904&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      <distill:md5>ff19ef3a1995d32270028b3c94bceddc</distill:md5>
+      <guid>https://www.reconverse.org/posts/2021-03-09-welcome-to-the-reconverse</guid>
+      <pubDate>Tue, 09 Mar 2021 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+[
+  {
+    "path": "posts/2021-03-09-welcome-to-the-reconverse/",
+    "title": "Welcome to the reconverse",
+    "description": "A coherent ecosystem  of R packages for outbreak analytics.",
+    "author": [
+      {
+        "name": "Thibaut Jombart",
+        "url": "https://thibautjombart.netlify.app/"
+      },
+      {
+        "name": "Tim Taylor",
+        "url": {}
+      }
+    ],
+    "date": "2021-03-09",
+    "categories": [],
+    "contents": "\nMembers of the R Epidemics Consortium have, for many years, been creating resources and software that could be used to inform the response to disease outbreaks, health emergencies and humanitarian crises. During this time, as well as providing training materials, running workshops and having members deployed to the field to help with data analytics, a variety of R packages have been created to enable analysts to quickly solve the problems they have (e.g. epicontacts, epiestim, incidence).\nSince the early days of RECON, the landscape of packages for the analysis of epidemics has grown, evolved and diversified, benefiting from feedback and contributions from our members as well as other groups. While such organic growth was needed and resulted in overall improvements of available tools, it has also led to a less consistent software landscape, with several packages overlapping or duplicating efforts, limited interoperability, and varying coding and development standards. Being aware that fragmented software landscapes can be the bane of data scientists (e.g. Excoffier and Heckel 2006), we realise there is also benefit to having a coherent and composable set of packages for users. The reconverse aims to address this. Much like the tidyverse is “an opinionated collection of R packages designed for data science”, the reconverse aims to be an opinionated ecosystem of packages for Outbreak Analytics.\nCompleting the reconverse will take years, and we intend for our first steps in this long journey to be taken carefully. However, we are not starting this journey empty-handed. With years of experience developing packages and extensive feedback from a wide range of users, our roadmap is unfolding with increasing clarity. Over the coming months we will be introducing some of the packages we view as the building blocks of the reconverse. In these exciting times, your input, feedback, criticisms, requests, and contributions will be more valuable than ever, as they will be instrumental in shaping the future of the reconverse – making it your reconverse.\nExciting times and challenges are ahead of us, and we are looking forward to taking you on board this epic journey.\n\n\n\nExcoffier, Laurent, and Gerald Heckel. 2006. “Computer Programs for Population Genetics Data Analysis: A Survival Guide.” Nature Reviews Genetics 7 (10): 745–58. https://doi.org/10.1038/nrg1904.\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-03-09T11:36:27+00:00",
+    "input_file": "welcome-to-the-reconverse.utf8.md"
+  }
+]
