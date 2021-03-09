@@ -7,7 +7,7 @@ site: distill::distill_website
 
 ## Latest news:
 
-March 9, 2021 - [Welcome to the reconverse](../../rmd_output/0/posts/2021-03-09-welcome-to-the-reconverse/)
+March 9, 2021 - [Welcome to the reconverse](posts/2021-03-09-welcome-to-the-reconverse/)
 
 ## Acknowledgments {.appendix}
 This is a website is made with the

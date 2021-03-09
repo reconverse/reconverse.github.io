@@ -6,14 +6,14 @@
       "description": "Details about the reconverse",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-03-09T11:41:17+00:00"
+      "last_modified": "2021-03-09T11:48:12+00:00"
     },
     {
       "path": "blog.html",
       "title": "Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-03-09T11:41:17+00:00"
+      "last_modified": "2021-03-09T11:48:12+00:00"
     },
     {
       "path": "index.html",
@@ -21,7 +21,7 @@
       "description": "A coherent ecosystem  of R packages for outbreak analytics\n",
       "author": [],
       "contents": "\nLatest news:\nMarch 9, 2021 - Welcome to the reconverse\nAcknowledgments\nThis is a website is made with the distill package and uses a custom theme by Desirée De Leon.\n\n\n\n",
-      "last_modified": "2021-03-09T11:41:18+00:00"
+      "last_modified": "2021-03-09T11:48:12+00:00"
     }
   ],
   "collections": ["posts/posts.json"]
