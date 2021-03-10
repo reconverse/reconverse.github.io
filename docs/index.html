@@ -2203,7 +2203,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   .distill-site-header .logo img{
-    max-height: 40px; /* Makes logo bigger, default was 20px */
+    max-height: 20px;
+    /*max-height: 40px; /* Makes logo bigger, default was 20px */
   }
 
   .distill-site-header {
@@ -2405,16 +2406,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
-<span class="logo">
-<img src="images/logo.png"/>
-</span>
 <a href="index.html" class="title">Reconverse</a>
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
 <a href="index.html">Home</a>
 <a href="blog.html">Blog</a>
-<a href="about.html">About</a>
+<a href="packages.html">Packages</a>
+<a href="development.html">Development</a>
+<a href="origins.html">Origins</a>
 <a href="blog.xml">
 <i class="fa fa-rss" aria-hidden="true"></i>
 </a>
@@ -2440,6 +2440,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="d-article">
 <h2 id="latest-news">Latest news:</h2>
 <p>March 9, 2021 - <a href="posts/2021-03-09-welcome-to-the-reconverse/">Welcome to the reconverse</a></p>
+<h2 id="about">About</h2>
+<p>The <em>reconverse</em> aims to provide a coherent and composable suite of analytics tools for informing the response to disease outbreaks, health emergencies and humanitarian crises, using the <a href="https://www.r-project.org/">R software environment</a>.</p>
+<p><em>Reconverse</em> packages must fulfil three key aspects:</p>
+<ul>
+<li>Efficiency: Packages can be used in real time to improve situation awareness and inform intervention strategies.</li>
+<li>Reliability: Packages are thoroughly and constantly tested using professional software development methods.</li>
+<li>Accessibility: Packages are free, open-source, and available on virtually any platform; and can be used with different levels of expertise.</li>
+</ul>
 <h2 class="appendix" id="acknowledgments">Acknowledgments</h2>
 <p>This is a website is made with the <a href="https://rstudio.github.io/distill/">distill package</a> and uses a custom theme by <a href="https://desiree.rbind.io/">Desirée De Leon</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>

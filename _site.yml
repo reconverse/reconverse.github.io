@@ -6,14 +6,17 @@ base_url: https://www.reconverse.org
 output_dir: "docs"
 theme: theme.css
 navbar:
-  logo: images/logo.png
   right:
     - text: "Home"
       href: index.html
     - text: "Blog"
       href: blog.html
-    - text: "About"
-      href: about.html
+    - text: "Packages"
+      href: packages.html
+    - text: "Development"
+      href: development.html
+    - text: "Origins"
+      href: origins.html
     - icon: fa fa-rss
       href: blog.xml
   source_url: https://github.com/reconverse/reconverse.github.io

@@ -85,29 +85,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Reconverse: About</title>
+  <title>Reconverse: Development</title>
 
-  <meta property="description" itemprop="description" content="Details about the reconverse"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Reconverse: About"/>
+  <meta property="og:title" content="Reconverse: Development"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Details about the reconverse"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Reconverse"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Reconverse: About"/>
-  <meta property="twitter:description" content="Details about the reconverse"/>
+  <meta property="twitter:title" content="Reconverse: Development"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["About"]},{"type":"character","attributes":{},"value":["Details about the reconverse"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["Development"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2203,7 +2200,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   .distill-site-header .logo img{
-    max-height: 40px; /* Makes logo bigger, default was 20px */
+    max-height: 20px;
+    /*max-height: 40px; /* Makes logo bigger, default was 20px */
   }
 
   .distill-site-header {
@@ -2397,7 +2395,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"About","description":"Details about the reconverse","authors":[]}
+{"title":"Development","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2405,16 +2403,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
-<span class="logo">
-<img src="images/logo.png"/>
-</span>
 <a href="index.html" class="title">Reconverse</a>
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
 <a href="index.html">Home</a>
 <a href="blog.html">Blog</a>
-<a href="about.html">About</a>
+<a href="packages.html">Packages</a>
+<a href="development.html">Development</a>
+<a href="origins.html">Origins</a>
 <a href="blog.xml">
 <i class="fa fa-rss" aria-hidden="true"></i>
 </a>
@@ -2430,18 +2427,47 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>About</h1>
+<h1>Development</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Details about the reconverse</p></p>
+
 </div>
 
 
 <div class="d-article">
-<h1 id="overview">Overview</h1>
-<p>Members of the <a href="https://www.repidemicsconsortium.org/">R Epidemics Consortium</a> have, for many years, been creating resources and software that could be used to inform the response to disease outbreaks, health emergencies and humanitarian crises. During this time, as well as providing training materials, running workshops and having members deployed to the field to help with data analytics, a variety of <a href="https://www.r-project.org/">R</a> packages have been created to enable analysts to quickly solve the problems they have (e.g. <a href="https://www.repidemicsconsortium.org/epicontacts/">epicontacts</a>, <a href="https://github.com/mrc-ide/EpiEstim">epiestim</a>, <a href="https://www.repidemicsconsortium.org/incidence/">incidence</a>).</p>
-<p>Since the early days of RECON, the landscape of packages for the analysis of epidemics has grown, evolved and diversified, benefiting from feedback and contributions from our members as well as other groups. While such organic growth was needed and resulted in overall improvements of available tools, it has also led to a less consistent software landscape, with several packages overlapping or duplicating efforts, limited interoperability, and varying coding and development standards. Being aware that fragmented software landscapes can be the bane of data scientists <span class="citation" data-cites="excoffier_computer_2006">[e.g. @excoffier_computer_2006]</span>, we realise there is also benefit to having a coherent and composable set of packages for users. The <strong>reconverse</strong> aims to address this. Much like the <a href="https://www.tidyverse.org/">tidyverse</a> is “an opinionated collection of R packages designed for data science”, the reconverse aims to be an opinionated ecosystem of packages for Outbreak Analytics.</p>
-<h1 id="packages">Packages</h1>
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#package-lifecyle">Package lifecyle</a>
+<ul>
+<li><a href="#concept">Concept</a></li>
+<li><a href="#experimental">Experimental</a></li>
+<li><a href="#maturing">Maturing</a></li>
+<li><a href="#stable">Stable</a></li>
+</ul></li>
+<li><a href="#contributing">Contributing</a></li>
+</ul>
+</nav>
+</div>
+<h1 id="package-lifecyle">Package lifecyle</h1>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/lifecycle_no_text.png" width="424" /></p>
+</div>
+<aside>
+The <a href="https://www.tidyverse.org">tidyverse</a> team introduced the concept of a package (or function) <a href="https://lifecycle.r-lib.org/articles/stages.html">lifecycle</a>. Our approach is less granular (we do not consider individual functions) and uses slightly different semantics but is still similar in nature.
+</aside>
+<p>We think of packages in terms of where they are in their development lifecycle, using 4 stages of package maturity to relay this to users:</p>
+<h2 id="concept">Concept</h2>
+<p>Initial ideas of what the package will be, maybe some gist of code and discussions among developpers, but not much more.</p>
+<h2 id="experimental">Experimental</h2>
+<p>Draft of a functional package, but interfaces and functionalities may change over time, testing and documentation maye be lacking. Typically semantic version &lt; 0.1.0.</p>
+<h2 id="maturing">Maturing</h2>
+<p>Package is functional, documented and tested. Can be used in production with the understanding that the interface may still undergo minor changes. Typically semantic version &lt; 1.0.0.</p>
+<h2 id="stable">Stable</h2>
+<p>Package is functional, documented and tested. The interface is not meant to change in the future. Can be used in production and relied upon by other packages. Typically semantic version &gt;= 1.0.0.</p>
+<h1 id="contributing">Contributing</h1>
+<p>More info coming soon!</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

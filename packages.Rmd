@@ -1,0 +1,76 @@
+---
+title: "Packages"
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## incidence2
+```{r, results="asis"}
+maturing <- system.file("images/badge-maturing.svg", package = "cogs")
+cat(sprintf("![](%s)\n", maturing))
+```
+[incidence2](https://www.reconverse.org/incidence2/) Provides functions and
+classes to compute, handle and visualise incidence from dated events for a
+defined time interval. Dates can be provided in various standard formats. The
+class 'incidence2' is used to store computed incidence and can be easily
+manipulated, subsetted, and plotted.
+
+
+## i2extras
+```{r, results="asis"}
+maturing <- system.file("images/badge-maturing.svg", package = "cogs")
+cat(sprintf("![](%s)\n", maturing))
+```
+[i2extras](https://www.reconverse.org/i2extras/) Provides additional
+functionality to the [incidence2](https://www.reconverse.org/incidence2/)
+package, including curve fitting, growth rate calculations and peak estimation.
+
+
+## reportfactory
+```{r, results="asis"}
+maturing <- system.file("images/badge-maturing.svg", package = "cogs")
+cat(sprintf("![](%s)\n", maturing))
+```
+[reportfactory](https://www.reconverse.org/reportfactory/) facilitates workflows
+for handling multiple .Rmd reports, compiling one or several reports in one go,
+and storing outputs in well-organised, timestamped folders.
+
+
+## trending
+```{r, results="asis"}
+maturing <- system.file("images/badge-maturing.svg", package = "cogs")
+cat(sprintf("![](%s)\n", maturing))
+```
+[trending](https://www.reconverse.org/trending/) provides a coherent interface
+to specifying common models and facilitate the easy generation of confidence and
+prediction intervals. Whilst it is useful in an interactive context, it’s main
+focus is to provide an intuitive interface on which other packages can be
+developed.
+
+
+## trendeval
+```{r, results="asis"}
+maturing <- system.file("images/badge-experimental.svg", package = "cogs")
+cat(sprintf("![](%s)\n", maturing))
+```
+[trendeval](https://www.reconverse.org/trendeval/) provides an interface for
+evaluating models fit with the trending package.
+
+
+
+
+
+
+
+
+
+
+
+

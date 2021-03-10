@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="distill" />
-  <link rel="alternate" type="application/rss+xml" href="https://www.reconverse.org/blog.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -86,26 +85,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Reconverse: Blog</title>
+  <title>Reconverse: Packages</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Reconverse: Blog"/>
+  <meta property="og:title" content="Reconverse: Packages"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Reconverse"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Reconverse: Blog"/>
+  <meta property="twitter:title" content="Reconverse: Packages"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","listing"]}},"value":[{"type":"character","attributes":{},"value":["Blog"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["Packages"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2391,12 +2390,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Blog","authors":[]}
+{"title":"Packages","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2426,168 +2425,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).load(function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-apply-limit l-page">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Blog">Blog</h1>
-<a href="posts/2021-03-09-welcome-to-the-reconverse/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 9, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Thibaut Jombart</div>
-<div class="dt-author">Tim Taylor</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Welcome to the reconverse</h2>
-<div class="dt-tags"></div>
-<p>A coherent ecosystem  of R packages for outbreak analytics.</p>
-</div>
-</a>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Blog</h1>
+<h1>Packages</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2595,6 +2435,43 @@ function init_posts_list() {
 
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#incidence2">incidence2</a></li>
+<li><a href="#i2extras">i2extras</a></li>
+<li><a href="#reportfactory">reportfactory</a></li>
+<li><a href="#trending">trending</a></li>
+<li><a href="#trendeval">trendeval</a></li>
+</ul>
+</nav>
+</div>
+<h2 id="incidence2">incidence2</h2>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="/home/tim/R/x86_64-redhat-linux-gnu-library/4.0/cogs/images/badge-maturing.svg" /></p>
+</div>
+<p><a href="https://www.reconverse.org/incidence2/">incidence2</a> Provides functions and classes to compute, handle and visualise incidence from dated events for a defined time interval. Dates can be provided in various standard formats. The class ‘incidence2’ is used to store computed incidence and can be easily manipulated, subsetted, and plotted.</p>
+<h2 id="i2extras">i2extras</h2>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="/home/tim/R/x86_64-redhat-linux-gnu-library/4.0/cogs/images/badge-maturing.svg" /></p>
+</div>
+<p><a href="https://www.reconverse.org/i2extras/">i2extras</a> Provides additional functionality to the <a href="https://www.reconverse.org/incidence2/">incidence2</a> package, including curve fitting, growth rate calculations and peak estimation.</p>
+<h2 id="reportfactory">reportfactory</h2>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="/home/tim/R/x86_64-redhat-linux-gnu-library/4.0/cogs/images/badge-maturing.svg" /></p>
+</div>
+<p><a href="https://www.reconverse.org/reportfactory/">reportfactory</a> facilitates workflows for handling multiple .Rmd reports, compiling one or several reports in one go, and storing outputs in well-organised, timestamped folders.</p>
+<h2 id="trending">trending</h2>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="/home/tim/R/x86_64-redhat-linux-gnu-library/4.0/cogs/images/badge-maturing.svg" /></p>
+</div>
+<p><a href="https://www.reconverse.org/trending/">trending</a> provides a coherent interface to specifying common models and facilitate the easy generation of confidence and prediction intervals. Whilst it is useful in an interactive context, it’s main focus is to provide an intuitive interface on which other packages can be developed.</p>
+<h2 id="trendeval">trendeval</h2>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="/home/tim/R/x86_64-redhat-linux-gnu-library/4.0/cogs/images/badge-experimental.svg" /></p>
+</div>
+<p><a href="https://www.reconverse.org/trendeval/">trendeval</a> provides an interface for evaluating models fit with the trending package.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

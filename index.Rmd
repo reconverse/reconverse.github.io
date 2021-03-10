@@ -9,6 +9,23 @@ site: distill::distill_website
 
 March 9, 2021 - [Welcome to the reconverse](posts/2021-03-09-welcome-to-the-reconverse/)
 
+## About
+
+The *reconverse* aims to provide a coherent and composable suite of analytics
+tools for informing the response to disease outbreaks, health emergencies and
+humanitarian crises, using the
+[R software environment](https://www.r-project.org/).
+
+*Reconverse* packages must fulfil three key aspects:
+
+- Efficiency: Packages can be used in real time to improve situation awareness
+  and inform intervention strategies.
+- Reliability: Packages are thoroughly and constantly tested using professional
+  software development methods.
+- Accessibility: Packages are free, open-source, and available on virtually any
+  platform; and can be used with different levels of expertise.
+
+
 ## Acknowledgments {.appendix}
 This is a website is made with the
 [distill package](https://rstudio.github.io/distill/) and uses a custom theme
