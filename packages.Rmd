@@ -13,8 +13,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## incidence2
 ```{r, results="asis"}
-maturing <- system.file("images/badge-maturing.svg", package = "cogs")
-cat(sprintf("![](%s)\n", maturing))
+cat("![](images/badge-maturing.svg)\n")
 ```
 [incidence2](https://www.reconverse.org/incidence2/) Provides functions and
 classes to compute, handle and visualise incidence from dated events for a
@@ -25,8 +24,7 @@ manipulated, subsetted, and plotted.
 
 ## i2extras
 ```{r, results="asis"}
-maturing <- system.file("images/badge-maturing.svg", package = "cogs")
-cat(sprintf("![](%s)\n", maturing))
+cat("![](images/badge-maturing.svg)\n")
 ```
 [i2extras](https://www.reconverse.org/i2extras/) Provides additional
 functionality to the [incidence2](https://www.reconverse.org/incidence2/)
@@ -35,8 +33,7 @@ package, including curve fitting, growth rate calculations and peak estimation.
 
 ## reportfactory
 ```{r, results="asis"}
-maturing <- system.file("images/badge-maturing.svg", package = "cogs")
-cat(sprintf("![](%s)\n", maturing))
+cat("![](images/badge-maturing.svg)\n")
 ```
 [reportfactory](https://www.reconverse.org/reportfactory/) facilitates workflows
 for handling multiple .Rmd reports, compiling one or several reports in one go,
@@ -45,8 +42,7 @@ and storing outputs in well-organised, timestamped folders.
 
 ## trending
 ```{r, results="asis"}
-maturing <- system.file("images/badge-maturing.svg", package = "cogs")
-cat(sprintf("![](%s)\n", maturing))
+cat("![](images/badge-maturing.svg)\n")
 ```
 [trending](https://www.reconverse.org/trending/) provides a coherent interface
 to specifying common models and facilitate the easy generation of confidence and
@@ -57,8 +53,7 @@ developed.
 
 ## trendeval
 ```{r, results="asis"}
-maturing <- system.file("images/badge-experimental.svg", package = "cogs")
-cat(sprintf("![](%s)\n", maturing))
+cat("![](images/badge-experimental.svg)\n")
 ```
 [trendeval](https://www.reconverse.org/trendeval/) provides an interface for
 evaluating models fit with the trending package.
