@@ -30,7 +30,7 @@ and development standards.  Being aware that fragmented software landscapes can
 be the bane of data scientists
 (e.g. [Excoffier and Heckel 2006](https://www.nature.com/articles/nrg1904), we
 realise there is also benefit to having a coherent and composable set of
-packages for users. The **reconverse** aims to address this. Much like the
+packages for users. The *reconverse* aims to address this. Much like the
 [tidyverse](https://www.tidyverse.org/) is "an opinionated collection of R
 packages designed for data science", the reconverse aims to be an opinionated
 ecosystem of packages for Outbreak Analytics.
