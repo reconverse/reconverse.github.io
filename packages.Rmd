@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```{r, results="asis"}
 cat("![](images/badge-maturing.svg)\n")
 ```
-[incidence2](https://www.reconverse.org/incidence2/) Provides functions and
+[incidence2](https://www.repidemicsconsortium.org/incidence2/) Provides functions and
 classes to compute, handle and visualise incidence from dated events for a
 defined time interval. Dates can be provided in various standard formats. The
 class 'incidence2' is used to store computed incidence and can be easily
@@ -26,8 +26,8 @@ manipulated, subsetted, and plotted.
 ```{r, results="asis"}
 cat("![](images/badge-maturing.svg)\n")
 ```
-[i2extras](https://www.reconverse.org/i2extras/) Provides additional
-functionality to the [incidence2](https://www.reconverse.org/incidence2/)
+[i2extras](https://www.repidemicsconsortium.org/i2extras/) Provides additional
+functionality to the [incidence2](https://www.repidemicsconsortium.org/incidence2/)
 package, including curve fitting, growth rate calculations and peak estimation.
 
 
@@ -44,7 +44,7 @@ and storing outputs in well-organised, timestamped folders.
 ```{r, results="asis"}
 cat("![](images/badge-maturing.svg)\n")
 ```
-[trending](https://www.reconverse.org/trending/) provides a coherent interface
+[trending](https://www.repidemicsconsortium.org/trending/) provides a coherent interface
 to specifying common models and facilitate the easy generation of confidence and
 prediction intervals. Whilst it is useful in an interactive context, it’s main
 focus is to provide an intuitive interface on which other packages can be
@@ -55,8 +55,9 @@ developed.
 ```{r, results="asis"}
 cat("![](images/badge-experimental.svg)\n")
 ```
-[trendeval](https://www.reconverse.org/trendeval/) provides an interface for
-evaluating models fit with the trending package.
+[trendeval](https://www.repidemicsconsortium.org/trendeval/) provides an interface for
+evaluating models fit with the [trending](https://www.repidemicsconsortium.org/trending/)
+package.
 
 
 
