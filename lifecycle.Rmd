@@ -1,21 +1,21 @@
 ---
-title: "Development"
+title: "Lifecycle"
 output:
   distill::distill_article:
-    toc: true
-    toc_depth: 2
+    fig_caption: false
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# Package lifecyle
-
-```{r}
-library(knitr)
-include_graphics("images/lifecycle_no_text.png")
-```
+When a user considers utilising a package in their work it is helpful to provide
+them with information on the development plans around the package. This allows
+them to make an informed decision as to whether they want to take that package
+as a dependency. To help users understand the development status of a package
+we use lifecycle badges to relay one of 4 stages of package maturity;
+[*concept*][Concept], [*experimental*][Experimental], [*maturing*][Maturing] and
+[*stable*][Stable]:
 
 <aside>
 The [tidyverse](https://www.tidyverse.org) team introduced the concept of a
@@ -25,12 +25,16 @@ less granular (we do not consider individual functions) and uses slightly
 different semantics but is still similar in nature.
 </aside>
 
-We think of packages in terms of where they are in their development lifecycle,
-using 4 stages of package maturity to relay this to users:
+```{r fig.cap="Diagram showing how packages go through stages from concept to experimental to maturing to stable"}
+library(knitr)
+include_graphics("images/lifecycle_no_text.png")
+```
 
 ## Concept
 Initial ideas of what the package will be, maybe some gist of code and
 discussions among developpers, but not much more.
+
+
 
 ## Experimental
 Draft of a functional package, but interfaces and functionalities may change

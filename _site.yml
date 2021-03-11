@@ -13,8 +13,8 @@ navbar:
       href: blog.html
     - text: "Packages"
       href: packages.html
-    - text: "Development"
-      href: development.html
+    - text: "Lifecycle"
+      href: lifecycle.html
     - text: "Origins"
       href: origins.html
     - icon: fa fa-rss

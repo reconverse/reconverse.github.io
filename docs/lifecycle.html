@@ -85,26 +85,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Reconverse: Development</title>
+  <title>Reconverse: Lifecycle</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Reconverse: Development"/>
+  <meta property="og:title" content="Reconverse: Lifecycle"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Reconverse"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Reconverse: Development"/>
+  <meta property="twitter:title" content="Reconverse: Lifecycle"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["Development"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["Lifecycle"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["fig_caption"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2395,7 +2395,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Development","authors":[]}
+{"title":"Lifecycle","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2410,7 +2410,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <a href="index.html">Home</a>
 <a href="blog.html">Blog</a>
 <a href="packages.html">Packages</a>
-<a href="development.html">Development</a>
+<a href="lifecycle.html">Lifecycle</a>
 <a href="origins.html">Origins</a>
 <a href="blog.xml">
 <i class="fa fa-rss" aria-hidden="true"></i>
@@ -2427,7 +2427,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Development</h1>
+<h1>Lifecycle</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2435,29 +2435,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <div class="d-article">
-<div class="d-contents d-contents-float">
-<nav class="l-text toc figcaption" id="TOC">
-<h3>Contents</h3>
-<ul>
-<li><a href="#package-lifecyle">Package lifecyle</a>
-<ul>
-<li><a href="#concept">Concept</a></li>
-<li><a href="#experimental">Experimental</a></li>
-<li><a href="#maturing">Maturing</a></li>
-<li><a href="#stable">Stable</a></li>
-</ul></li>
-<li><a href="#contributing">Contributing</a></li>
-</ul>
-</nav>
-</div>
-<h1 id="package-lifecyle">Package lifecyle</h1>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="images/lifecycle_no_text.png" width="424" /></p>
-</div>
+<p>When a user considers utilising a package in their work it is helpful to provide them with information on the development plans around the package. This allows them to make an informed decision as to whether they want to take that package as a dependency. To help users understand the development status of a package we use lifecycle badges to relay one of 4 stages of package maturity; <a href="#concept"><em>concept</em></a>, <a href="#experimental"><em>experimental</em></a>, <a href="#maturing"><em>maturing</em></a> and <a href="#stable"><em>stable</em></a>:</p>
 <aside>
 The <a href="https://www.tidyverse.org">tidyverse</a> team introduced the concept of a package (or function) <a href="https://lifecycle.r-lib.org/articles/stages.html">lifecycle</a>. Our approach is less granular (we do not consider individual functions) and uses slightly different semantics but is still similar in nature.
 </aside>
-<p>We think of packages in terms of where they are in their development lifecycle, using 4 stages of package maturity to relay this to users:</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/lifecycle_no_text.png" title="Diagram showing how packages go through stages from concept to experimental to maturing to stable" alt="Diagram showing how packages go through stages from concept to experimental to maturing to stable" width="424" /></p>
+</div>
 <h2 id="concept">Concept</h2>
 <p>Initial ideas of what the package will be, maybe some gist of code and discussions among developpers, but not much more.</p>
 <h2 id="experimental">Experimental</h2>
