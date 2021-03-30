@@ -13,9 +13,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## incidence2
 ```{r, results="asis"}
-cat("![](images/badge-maturing.svg)\n")
+cat("![](images/badge-stable.svg)\n")
 ```
-[incidence2](https://www.repidemicsconsortium.org/incidence2/) Provides functions and
+[incidence2](https://www.reconverse.org/incidence2/) Provides functions and
 classes to compute, handle and visualise incidence from dated events for a
 defined time interval. Dates can be provided in various standard formats. The
 class 'incidence2' is used to store computed incidence and can be easily
@@ -26,8 +26,8 @@ manipulated, subsetted, and plotted.
 ```{r, results="asis"}
 cat("![](images/badge-maturing.svg)\n")
 ```
-[i2extras](https://www.repidemicsconsortium.org/i2extras/) Provides additional
-functionality to the [incidence2](https://www.repidemicsconsortium.org/incidence2/)
+[i2extras](https://www.reconverse.org/i2extras/) Provides additional
+functionality to the [incidence2](https://www.reconverse.org/incidence2/)
 package, including curve fitting, growth rate calculations and peak estimation.
 
 
