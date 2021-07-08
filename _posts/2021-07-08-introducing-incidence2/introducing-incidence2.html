@@ -85,635 +85,50 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Reconverse: Lifecycle</title>
+  <title>Introducing incidence2</title>
 
+  <meta property="description" itemprop="description" content="Compute, handle and visualise epicurves."/>
 
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
 
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-07-08"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-07-08"/>
+  <meta name="article:author" content="Tim Taylor"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Reconverse: Lifecycle"/>
+  <meta property="og:title" content="Introducing incidence2"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Compute, handle and visualise epicurves."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Reconverse"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Reconverse: Lifecycle"/>
+  <meta property="twitter:title" content="Introducing incidence2"/>
+  <meta property="twitter:description" content="Compute, handle and visualise epicurves."/>
 
   <!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=Epidemic curves made easy using the r package incidence;citation_publication_date=2019;citation_publisher=F1000 Research Ltd;citation_volume=8;citation_doi=10.12688/f1000research.18002.1;citation_author=Zhian N. Kamvar;citation_author=Jun Cai;citation_author=Juliet R. C. Pulliam;citation_author=Jakob Schumacher;citation_author=Thibaut Jombart"/>
+  <meta name="citation_reference" content="citation_title=R: A language and environment for statistical computing;citation_publication_date=2021;citation_publisher=R Foundation for Statistical Computing;citation_author=R: A language and environment for statistical computing"/>
+  <meta name="citation_reference" content="citation_title=Incidence2: Compute, handle and plot incidence of dated events;citation_publication_date=2021;citation_author=Tim Taylor"/>
+  <meta name="citation_reference" content="citation_title=Tibble: Simple data frames;citation_publication_date=2021;citation_author=Kirill Müller;citation_author=Hadley Wickham"/>
+  <meta name="citation_reference" content="citation_title=Grates: Grouped date classes;citation_publication_date=2021;citation_author=Tim Taylor"/>
+  <meta name="citation_reference" content="citation_title=Outbreaks: A collection of disease outbreak data;citation_publication_date=2020;citation_author=Thibaut Jombart;citation_author=Simon Frost;citation_author=Pierre Nouvellet;citation_author=Finlay Campbell;citation_author=Bertrand Sudre"/>
+  <meta name="citation_reference" content="citation_title=Covidregionaldata: Subnational data for covid-19 epidemiology;citation_publication_date=2021;citation_volume=6;citation_doi=10.5281/zenodo.3957539;citation_author=Joseph Palmer;citation_author=Katharine Sherratt;citation_author=Richard Martin-Nielsen;citation_author=Jonnie Bevan;citation_author=Hamish Gibbs;citation_author=Sebastian Funk;citation_author=Sam Abbott"/>
+  <meta name="citation_reference" content="citation_title=Clock: Date-time types and tools;citation_publication_date=2021;citation_author=Davis Vaughan"/>
+  <meta name="citation_reference" content="citation_title=Zoo: S3 infrastructure for regular and irregular time series;citation_publication_date=2005;citation_volume=14;citation_doi=10.18637/jss.v014.i06;citation_author=Achim Zeileis;citation_author=Gabor Grothendieck"/>
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["Lifecycle"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["fig_caption"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft","creative_commons","bibliography","citation"]}},"value":[{"type":"character","attributes":{},"value":["Introducing incidence2"]},{"type":"character","attributes":{},"value":["Compute, handle and visualise epicurves.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Tim Taylor"]}]}]},{"type":"character","attributes":{},"value":["07-08-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["CC BY"]},{"type":"character","attributes":{},"value":["ref.bib"]},{"type":"logical","attributes":{},"value":[true]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["introducing-incidence2_files/figure-html5/example1-1.png","introducing-incidence2_files/figure-html5/example1-2.png","introducing-incidence2_files/figure-html5/example2-1.png","ref.bib"]}
+  </script>
   <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
-  </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-  <script type="application/javascript">
-
-  function getMeta(metaName) {
-    var metas = document.getElementsByTagName('meta');
-    for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('name') === metaName) {
-        return metas[i].getAttribute('content');
-      }
-    }
-    return '';
-  }
-
-  function offsetURL(url) {
-    var offset = getMeta('distill:offset');
-    return offset ? offset + '/' + url : url;
-  }
-
-  function createFuseIndex() {
-
-    // create fuse index
-    var options = {
-      keys: [
-        { name: 'title', weight: 20 },
-        { name: 'categories', weight: 15 },
-        { name: 'description', weight: 10 },
-        { name: 'contents', weight: 5 },
-      ],
-      ignoreLocation: true,
-      threshold: 0
-    };
-    var fuse = new window.Fuse([], options);
-
-    // fetch the main search.json
-    return fetch(offsetURL('search.json'))
-      .then(function(response) {
-        if (response.status == 200) {
-          return response.json().then(function(json) {
-            // index main articles
-            json.articles.forEach(function(article) {
-              fuse.add(article);
-            });
-            // download collections and index their articles
-            return Promise.all(json.collections.map(function(collection) {
-              return fetch(offsetURL(collection)).then(function(response) {
-                if (response.status === 200) {
-                  return response.json().then(function(articles) {
-                    articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                  })
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                              response.status)
-                  );
-                }
-              });
-            })).then(function() {
-              return fuse;
-            });
-          });
-
-        } else {
-          return Promise.reject(
-            new Error('Unexpected status from search index request: ' +
-                        response.status)
-          );
-        }
-      });
-  }
-
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-
-    // get search element (bail if we don't have one)
-    var searchEl = window.document.getElementById('distill-search');
-    if (!searchEl)
-      return;
-
-    createFuseIndex()
-      .then(function(fuse) {
-
-        // make search box visible
-        searchEl.classList.remove('hidden');
-
-        // initialize autocomplete
-        var options = {
-          autoselect: true,
-          hint: false,
-          minLength: 2,
-        };
-        window.autocomplete(searchEl, options, [{
-          source: function(query, callback) {
-            const searchOptions = {
-              isCaseSensitive: false,
-              shouldSort: true,
-              minMatchCharLength: 2,
-              limit: 10,
-            };
-            var results = fuse.search(query, searchOptions);
-            callback(results
-              .map(function(result) { return result.item; })
-            );
-          },
-          templates: {
-            suggestion: function(suggestion) {
-              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                : '';
-              var html = `
-                <div class="search-item">
-                  <h3>${suggestion.title}</h3>
-                  <div class="search-item-description">
-                    ${suggestion.description || ''}
-                  </div>
-                  <div class="search-item-preview">
-                    ${img}
-                  </div>
-                </div>
-              `;
-              return html;
-            }
-          }
-        }]).on('autocomplete:selected', function(event, suggestion) {
-          window.location.href = offsetURL(suggestion.path);
-        });
-        // remove inline display style on autocompleter (we want to
-        // manage responsive display via css)
-        $('.algolia-autocomplete').css("display", "");
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
-  });
-
-  </script>
-
-  <style type="text/css">
-
-  .nav-search {
-    font-size: x-small;
-  }
-
-  /* Algolioa Autocomplete */
-
-  .algolia-autocomplete {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: sub;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    padding-top: 8px;
-    padding-bottom: 0;
-    border-radius: 6px;
-    border: 1px #0F2E3D solid;
-    width: 180px;
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-nav .algolia-autocomplete {
-      display: none;
-      visibility: hidden;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete {
-      display: inline-block;
-      visibility: visible;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-      margin-left: 0;
-      width: 400px;
-      max-height: 400px;
-    }
-  }
-
-  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-    width: 90%;
-    outline: none;
-    border: none;
-  }
-
-  .algolia-autocomplete .aa-hint {
-    color: #999;
-  }
-  .algolia-autocomplete .aa-dropdown-menu {
-    width: 550px;
-    max-height: 70vh;
-    overflow-x: visible;
-    overflow-y: scroll;
-    padding: 5px;
-    margin-top: 3px;
-    margin-left: -150px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #999;
-    border-top: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-    cursor: pointer;
-    padding: 5px 4px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-    border-bottom: none;
-    margin-bottom: 2px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-    overflow: hidden;
-    font-size: 0.8em;
-    line-height: 1.4em;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-    font-size: 1rem;
-    margin-block-start: 0;
-    margin-block-end: 5px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-    display: inline-block;
-    overflow: hidden;
-    height: 2.8em;
-    width: 80%;
-    margin-right: 4%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-    display: inline-block;
-    width: 15%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-    height: 3em;
-    width: auto;
-    display: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-    display: initial;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background-color: #eee;
-  }
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  </style>
-
-
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -2028,362 +1443,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </script>
 
-  <style type="text/css">
-  /* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-
-
-
-  html {
-    /*-- Main font sizes --*/
-    --title-size:      50px;
-    --body-size:       1.06rem;
-    --code-size:       14px;
-    --aside-size:      12px;
-    --fig-cap-size:    13px;
-    /*-- Main font colors --*/
-    --title-color:     #000000;
-    --header-color:    rgba(0, 0, 0, 0.8);
-    --body-color:      rgba(0, 0, 0, 0.8);
-    --aside-color:     rgba(0, 0, 0, 0.6);
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
-    /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    sans-serif;
-    --mono-font:       monospace;
-    --body-font:       sans-serif;
-    --navbar-font:     sans-serif;  /* websites + blogs only */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-    --heading-size:    0.6rem;
-    --heading-color:   rgba(0, 0, 0, 0.5);
-    --body-size:       0.8rem;
-    --body-color:      rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-    --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);
-    --text-size:       0.8em;
-    --text-color:      rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-    --title-size:       18px;
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  .distill-site-footer {
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
-  </style>
-  <style type="text/css">/* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-  @import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:300, 300i&display=swap');
-  @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
-  @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
-
-  html {
-    /*-- Main font sizes --*/
-    --title-size:      50px;
-    --body-size:       1.06rem;
-    --code-size:       14px;
-    --aside-size:      12px;
-    --fig-cap-size:    13px;
-    /*-- Main font colors --*/
-    --title-color:     #ca225e;
-    --header-color:    #ca225e;                    /* edited */
-    --body-color:      #404040;                    /* edited */
-    --aside-color:     rgba(0, 0, 0, 0.6);
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
-    /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    "Noto Serif JP", sans-serif; /* edited */
-    --mono-font:       "IBM Plex Mono", monospace;  /* edited */
-    --body-font:       "Lato", sans-serif;          /* edited */
-    --navbar-font:     "Lato", sans-serif;          /* edited */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-    --heading-size:    0.9rem;                      /* edited */
-    --heading-color:   rgba(0, 0, 0, 0.5);
-    --body-size:       0.95rem;                     /* edited */
-    --body-color:      rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-    --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);
-    --text-size:       0.9rem;                    /* edited */
-    --text-color:      #1a162d;                   /* edited */
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-    --title-size:       18px;
-    --text-color:       #1f1f1f;                   /* edited */
-    --text-size:        15px;
-    --hover-color:      #787878;                   /* edited */
-    --bkgd-color:       #fff;                      /* edited */
-  }
-
-
-
-  .distill-site-footer {
-    --text-color:       #7e7b88;                   /* edited */
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #ca225e3d;                 /* edited */
-  }
-
-  /*-- Additional custom styles --*/
-
-  ul > li::marker {
-    color: #ca225e;
-  }
-
-  .distill-site-header {
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    letter-spacing: 2px;
-    font-weight: 300;
-  }
-
-  .distill-site-header .logo img{
-    max-height: 20px;
-    /*max-height: 40px; /* Makes logo bigger, default was 20px */
-  }
-
-  .distill-site-header {
-    padding-top: 1rem;
-  }
-
-
-  d-title h1,
-  d-article h2,
-  .posts-list .description h2,
-  .posts-list > h1 {
-      font-weight: 300;
-  }
-
-  d-appendix {
-    background-color: #fdf7f9;
-    border-top: none;
-  }</style>
-  <style type="text/css">
-  /* base style */
-
-  /* FONT FAMILIES */
-
-  :root {
-    --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-    --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-  }
-
-  body,
-  .posts-list .post-preview p,
-  .posts-list .description p {
-    font-family: var(--body-font), var(--body-default);
-  }
-
-  h1, h2, h3, h4, h5, h6,
-  .posts-list .post-preview h2,
-  .posts-list .description h2 {
-    font-family: var(--heading-font), var(--heading-default);
-  }
-
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-family: var(--mono-font), var(--mono-default);
-  }
-
-
-  /*-- TITLE --*/
-  d-title h1,
-  .posts-list > h1 {
-    color: var(--title-color, black);
-  }
-
-  d-title h1 {
-    font-size: var(--title-size, 50px);
-  }
-
-  /*-- HEADERS --*/
-  d-article h1,
-  d-article h2,
-  d-article h3,
-  d-article h4,
-  d-article h5,
-  d-article h6 {
-    color: var(--header-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- BODY --*/
-  d-article > p,  /* only text inside of <p> tags */
-  d-article > ul, /* lists */
-  d-article > ol {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-    font-size: var(--body-size, 1.06rem);
-  }
-
-
-  /*-- CODE --*/
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-size: var(--code-size, 14px);
-  }
-
-  /*-- ASIDE --*/
-  d-article aside {
-    font-size: var(--aside-size, 12px);
-    color: var(--aside-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- FIGURE CAPTIONS --*/
-  figure .caption,
-  figure figcaption,
-  .figure .caption {
-    font-size: var(--fig-cap-size, 13px);
-    color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- METADATA --*/
-  d-byline h3 {
-    font-size: var(--heading-size, 0.6rem);
-    color: var(--heading-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-byline {
-    font-size: var(--body-size, 0.8rem);
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  d-byline a,
-  d-article d-byline a {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- TABLE OF CONTENTS --*/
-  .d-contents nav h3 {
-    font-size: var(--heading-size, 18px);
-  }
-
-  .d-contents nav a {
-    font-size: var(--contents-size, 13px);
-  }
-
-  /*-- APPENDIX --*/
-  d-appendix h3 {
-    font-size: var(--heading-size, 15px);
-    color: var(--heading-color, rgba(0, 0, 0, 0.65));
-  }
-
-  d-appendix {
-    font-size: var(--text-size, 0.8em);
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-appendix d-footnote-list a.footnote-backlink {
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  .distill-site-header .title {
-    font-size: var(--title-size, 18px);
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .distill-site-header a,
-  .nav-dropdown .nav-dropbtn {
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    font-size: var(--text-size, 15px);
-  }
-
-  .distill-site-header a:hover,
-  .nav-dropdown:hover .nav-dropbtn {
-    color: var(--hover-color, white);
-  }
-
-  .distill-site-header {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer a:hover {
-    color: var(--hover-color, white);
-  }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="introducing-incidence2_files/header-attrs-2.9/header-attrs.js"></script>
+  <script src="introducing-incidence2_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="introducing-incidence2_files/popper-2.6.0/popper.min.js"></script>
+  <link href="introducing-incidence2_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="introducing-incidence2_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="introducing-incidence2_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="introducing-incidence2_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="introducing-incidence2_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="introducing-incidence2_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="introducing-incidence2_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
@@ -2395,64 +1465,319 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Lifecycle","authors":[]}
+{"title":"Introducing incidence2","description":"Compute, handle and visualise epicurves.","authors":[{"author":"Tim Taylor","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-07-08T00:00:00.000+01:00","citationText":"Taylor, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Reconverse</a>
-<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="blog.html">Blog</a>
-<a href="packages.html">Packages</a>
-<a href="lifecycle.html">Lifecycle</a>
-<a href="origins.html">Origins</a>
-<a href="blog.xml">
-<i class="fa fa-rss" aria-hidden="true"></i>
-</a>
-<a href="https://github.com/reconverse/reconverse.github.io" aria-label="Link to source">
-<i class="fab fa-github" aria-hidden="true"></i>
-</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Lifecycle</h1>
+<h1>Introducing incidence2</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>Compute, handle and visualise epicurves.</p></p>
 </div>
 
+<div class="d-byline">
+  Tim Taylor  
+  
+<br/>07-08-2021
+</div>
 
 <div class="d-article">
-<p>When a user considers utilising a package in their work it is helpful to provide them with information on the development plans around the package. This allows them to make an informed decision as to whether they want to take that package as a dependency. To help users understand the development status of a package we use lifecycle badges to relay one of 4 stages of package maturity; <a href="#concept"><em>concept</em></a>, <a href="#experimental"><em>experimental</em></a>, <a href="#maturing"><em>maturing</em></a> and <a href="#stable"><em>stable</em></a>:</p>
-<aside>
-The <a href="https://www.tidyverse.org">tidyverse</a> team introduced the concept of a package (or function) <a href="https://lifecycle.r-lib.org/articles/stages.html">lifecycle</a>. Our approach is less granular (we do not consider individual functions) and uses slightly different semantics but is still similar in nature.
-</aside>
+<p>It’s been a few months since our first post, <a href="posts/2021-03-09-welcome-to-the-reconverse/">‘Welcome to the reconverse’</a>, and, coinciding with the release of version 1.2.0, we thought it a good time to introduce you to the <strong><em>incidence2</em></strong> package <span class="citation" data-cites="Rincidence2">(Taylor <a href="#ref-Rincidence2" role="doc-biblioref">2021</a><a href="#ref-Rincidence2" role="doc-biblioref">b</a>)</span> for <strong>R</strong> <span class="citation" data-cites="R">(R Core Team <a href="#ref-R" role="doc-biblioref">2021</a>)</span>.</p>
+<h2 id="background">Background</h2>
+<p>During a disease outbreak it is important to collect some basic information on cases in a line list; a data structure where each entry describes a unique individual in an epidemiological context. Line lists are typically in a tabular format where each row is an individual with a unique ID, meta-data describing the individual which are fixed in time (e.g., age, sex, occupation, disease outcome) and time-stamped measurements (e.g., date of onset, date of admission, date of disease outcome).</p>
+<p>To better understand an outbreak, line lists are often aggregated to produce epidemic curves (epicurves); graphs representing the number of new cases over a given time interval (e.g. days, weeks, months). The process to convert a line list to an epicurve typically involves four stages:</p>
+<ol type="1">
+<li>Data cleaning;</li>
+<li>time standardisation;</li>
+<li>aggregation; and</li>
+<li>visualisation.</li>
+</ol>
+<p>To assist with the computing and visualisation of epicurves (stages 2 to 4), the <strong>incidence</strong> <span class="citation" data-cites="Kamvar2019">(Kamvar et al. <a href="#ref-Kamvar2019" role="doc-biblioref">2019</a>)</span> package was created. Here the term <em>incidence</em> was used to refer to the underlying, aggregated data, not the <em>rate of incidence</em>. Whilst this original implementation worked well it did have some limitations:</p>
+<ul>
+<li>Users were unable to group by more than one variable at a time.</li>
+<li>Users were also unable to convert pre aggregated data in to the packages’ incidence class.</li>
+<li>Date grouping was only possible using the functions provided within the package.</li>
+</ul>
+<p><strong><em>incidence2</em></strong> is a re-imagining of the original package, built to address these limitations.</p>
+<h2 id="implementation">Implementation</h2>
+<p>With <strong><em>incidence2</em></strong>, incidence objects are constructed as a subclass of <a href="https://tibble.tidyverse.org/">tibble</a> <span class="citation" data-cites="Rtibble">(Müller and Wickham <a href="#ref-Rtibble" role="doc-biblioref">2021</a>)</span>, where the following <em>class invariants</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> hold true:</p>
+<ul>
+<li>A single column representing the <em>time index</em> of the latter counts;</li>
+<li>one or more columns representing <em>counts</em> of a time-stamped measurement;</li>
+<li>zero or more columns representing <em>groups</em>;</li>
+<li>zero or more columns representing other <em>associated measurements</em>; and</li>
+<li>when considering the time index and group columns, there must be no duplicate rows.</li>
+</ul>
+<p>The names of the columns representing the time index, counts, groups and associated measurements are then stored as as attributes of the object.</p>
+<p>By building incidence objects on tibbles (which themselves build upon data frames) we benefit from the rich support for these data structures that is present within both ‘base’ R and the wider package ecosystem.</p>
+<p>When constructing incidence objects input can be given as either line list or pre-aggregated data and users have the option to use an “opinionated” approach to date grouping (built on top of the <strong><em>grates</em></strong> package <span class="citation" data-cites="Rgrates">(Taylor <a href="#ref-Rgrates" role="doc-biblioref">2021</a><a href="#ref-Rgrates" role="doc-biblioref">a</a>)</span>) or to specify there own date grouping function.</p>
+<h2 id="how-to-use">How to use</h2>
+<p>To illustrate the main package functionality we give three simple examples. The first of these uses synthetic line list data from the <strong><em>outbreaks</em></strong> package <span class="citation" data-cites="Routbreaks">(Jombart et al. <a href="#ref-Routbreaks" role="doc-biblioref">2020</a>)</span>. The second example downloads some Covid-19 case data from the UK’s National Health Service via the <strong><em>covidregionaldata</em></strong> package <span class="citation" data-cites="Rcovidregionaldata">(Palmer et al. <a href="#ref-Rcovidregionaldata" role="doc-biblioref">2021</a>)</span>. The third example uses the <strong><em>clock</em></strong> <span class="citation" data-cites="Rclock">(Vaughan <a href="#ref-Rclock" role="doc-biblioref">2021</a>)</span> and <strong><em>zoo</em></strong> <span class="citation" data-cites="Rzoo">(Zeileis and Grothendieck <a href="#ref-Rzoo" role="doc-biblioref">2005</a>)</span> packages to illustrate the use of custom date grouping functions.</p>
+<h3 id="required-packages">Required packages</h3>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="images/lifecycle_no_text.png" title="Diagram showing how packages go through stages from concept to experimental to maturing to stable" alt="Diagram showing how packages go through stages from concept to experimental to maturing to stable" width="424" /></p>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/reconverse/incidence2'>incidence2</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/reconhub/outbreaks'>outbreaks</a></span><span class='op'>)</span>         <span class='co'># for example 1</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://epiforecasts.io/covidregionaldata/'>covidregionaldata</a></span><span class='op'>)</span> <span class='co'># for example 2 and 3</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://clock.r-lib.org'>clock</a></span><span class='op'>)</span>             <span class='co'># for example 3</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://zoo.R-Forge.R-project.org/'>zoo</a></span><span class='op'>)</span>               <span class='co'># for example 3</span>
+</code></pre>
 </div>
-<h2 id="concept">Concept</h2>
-<p>Initial ideas of what the package will be, maybe some gist of code and discussions among developpers, but not much more.</p>
-<h2 id="experimental">Experimental</h2>
-<p>Draft of a functional package, but interfaces and functionalities may change over time, testing and documentation maye be lacking. Typically semantic version &lt; 0.1.0.</p>
-<h2 id="maturing">Maturing</h2>
-<p>Package is functional, documented and tested. Can be used in production with the understanding that the interface may still undergo minor changes. Typically semantic version &lt; 1.0.0.</p>
-<h2 id="stable">Stable</h2>
-<p>Package is functional, documented and tested. The interface is not meant to change in the future. Can be used in production and relied upon by other packages. Typically semantic version &gt;= 1.0.0.</p>
-<h1 id="contributing">Contributing</h1>
-<p>More info coming soon!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+</div>
+<h3 id="example-1---line-list-data">Example 1 - Line list data</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># get the linelist data</span>
+<span class='va'>dat</span> <span class='op'>&lt;-</span> <span class='va'>ebola_sim_clean</span><span class='op'>$</span><span class='va'>linelist</span>
+
+<span class='co'># a quick visualising the daily onsets</span>
+<span class='va'>dat</span> |&gt; <span class='fu'><a href='https://rdrr.io/pkg/incidence2/man/incidence.html'>incidence</a></span><span class='op'>(</span><span class='va'>date_of_onset</span><span class='op'>)</span> |&gt; <span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<img src="introducing-incidence2_files/figure-html5/example1-1.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># calculate the epiweek incidence across hospitals and plot</span>
+<span class='va'>dat</span> |&gt; 
+  <span class='fu'><a href='https://rdrr.io/pkg/incidence2/man/incidence.html'>incidence</a></span><span class='op'>(</span>
+    date_index <span class='op'>=</span> <span class='va'>date_of_onset</span>,
+    groups <span class='op'>=</span> <span class='va'>hospital</span>,
+    interval <span class='op'>=</span> <span class='st'>"epiweek"</span>,
+    na_as_group <span class='op'>=</span> <span class='cn'>FALSE</span>
+  <span class='op'>)</span> |&gt; 
+  <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='op'>)</span> |&gt; 
+  <span class='fu'><a href='https://rdrr.io/pkg/incidence2/man/plot.incidence2.html'>facet_plot</a></span><span class='op'>(</span>nrow <span class='op'>=</span> <span class='fl'>3</span>, color <span class='op'>=</span> <span class='st'>"white"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>An incidence object: 262 x 3
+date range: [2014-W15] to [2015-W17]
+cases: 4373
+interval: 1 (Sunday) week 
+
+   date_index hospital                                     count
+       &lt;yrwk&gt; &lt;fct&gt;                                        &lt;int&gt;
+ 1   2014-W15 Military Hospital                                1
+ 2   2014-W16 Connaught Hospital                               1
+ 3   2014-W17 other                                            3
+ 4   2014-W18 Connaught Hospital                               1
+ 5   2014-W18 Princess Christian Maternity Hospital (PCMH)     1
+ 6   2014-W18 Rokupa Hospital                                  1
+ 7   2014-W19 Connaught Hospital                               3
+ 8   2014-W19 Military Hospital                                4
+ 9   2014-W19 other                                            1
+10   2014-W19 Princess Christian Maternity Hospital (PCMH)     1
+# … with 252 more rows</code></pre>
+<p><img src="introducing-incidence2_files/figure-html5/example1-2.png" width="624" /></p>
+</div>
+<h3 id="example-2---pre-aggregated-data">Example 2 - Pre-aggregated data</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># get the data and filter out the nations</span>
+<span class='va'>dat</span> <span class='op'>&lt;-</span> <span class='fu'><a href='epiforecasts.io/covidregionaldata/reference/get_regional_data.html'>get_regional_data</a></span><span class='op'>(</span>country <span class='op'>=</span> <span class='st'>"UK"</span>, verbose <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+<span class='va'>nations</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"England"</span>, <span class='st'>"Northern Ireland"</span>, <span class='st'>"Scotland"</span>, <span class='st'>"Wales"</span><span class='op'>)</span>
+<span class='va'>dat</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span><span class='op'>(</span><span class='va'>dat</span>, <span class='op'>!</span><span class='va'>region</span> <span class='op'>%in%</span> <span class='va'>nations</span><span class='op'>)</span>
+
+<span class='co'># calculate iso-weekly new cases across regions and plot</span>
+<span class='va'>dat</span> |&gt; 
+  <span class='fu'><a href='https://rdrr.io/pkg/incidence2/man/incidence.html'>incidence</a></span><span class='op'>(</span>
+    date_index <span class='op'>=</span> <span class='va'>date</span>,
+    counts <span class='op'>=</span> <span class='va'>cases_new</span>,
+    groups <span class='op'>=</span> <span class='va'>region</span>,
+    interval <span class='op'>=</span> <span class='st'>"isoweek"</span>,
+    na_as_group <span class='op'>=</span> <span class='cn'>FALSE</span>
+  <span class='op'>)</span> |&gt; 
+  <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='op'>)</span> |&gt; 
+  <span class='fu'><a href='https://rdrr.io/pkg/incidence2/man/plot.incidence2.html'>facet_plot</a></span><span class='op'>(</span>angle <span class='op'>=</span> <span class='fl'>45</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>An incidence object: 684 x 3
+date range: [2020-W05] to [2021-W27]
+cases_new: 4322630
+interval: 1 (Monday) week 
+
+   date_index region                   cases_new
+       &lt;yrwk&gt; &lt;chr&gt;                        &lt;dbl&gt;
+ 1   2020-W05 East Midlands                    0
+ 2   2020-W05 East of England                  0
+ 3   2020-W05 London                           0
+ 4   2020-W05 North East                       0
+ 5   2020-W05 North West                       0
+ 6   2020-W05 South East                       0
+ 7   2020-W05 South West                       0
+ 8   2020-W05 West Midlands                    0
+ 9   2020-W05 Yorkshire and The Humber         1
+10   2020-W06 East Midlands                    0
+# … with 674 more rows</code></pre>
+<p><img src="introducing-incidence2_files/figure-html5/example2-1.png" width="624" /></p>
+</div>
+<h3 id="example-3---user-supplied-date-grouping-functions">Example 3 - User supplied date grouping functions</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># month grouping based on clock functions</span>
+<span class='va'>clock_month_inci</span> <span class='op'>&lt;-</span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/incidence2/man/build_incidence.html'>build_incidence</a></span><span class='op'>(</span>
+    <span class='va'>dat</span>,
+    date_index <span class='op'>=</span> <span class='va'>date</span>,
+    groups <span class='op'>=</span> <span class='va'>region</span>,
+    counts <span class='op'>=</span> <span class='fu'>ends_with</span><span class='op'>(</span><span class='st'>"new"</span><span class='op'>)</span>, <span class='co'># tidyselect :)</span>
+    FUN <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='fu'><a href='https://clock.r-lib.org/reference/calendar_narrow.html'>calendar_narrow</a></span><span class='op'>(</span><span class='fu'><a href='https://clock.r-lib.org/reference/as_year_month_day.html'>as_year_month_day</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>, precision <span class='op'>=</span> <span class='st'>"month"</span><span class='op'>)</span>
+  <span class='op'>)</span>
+<span class='va'>clock_month_inci</span>
+</code></pre>
+</div>
+<pre><code>An incidence object: 171 x 7
+date range: [2020-01] to [2021-07]
+cases_new: 4322630
+deaths_new: 112182
+recovered_new: 0
+hosp_new: 0
+tested_new: 0
+
+   date_index  region      cases_new deaths_new recovered_new hosp_new
+   &lt;ymd&lt;month&gt; &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;    &lt;dbl&gt;
+ 1 2020-01     East Midla…         0          0             0        0
+ 2 2020-01     East of En…         0          0             0        0
+ 3 2020-01     London              0          0             0        0
+ 4 2020-01     North East          0          0             0        0
+ 5 2020-01     North West          0          0             0        0
+ 6 2020-01     South East          0          0             0        0
+ 7 2020-01     South West          0          0             0        0
+ 8 2020-01     West Midla…         0          0             0        0
+ 9 2020-01     Yorkshire …         1          0             0        0
+10 2020-02     East Midla…         4          0             0        0
+# … with 161 more rows, and 1 more variable: tested_new &lt;dbl&gt;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># month grouping based on using zoo as.yearmon</span>
+<span class='va'>zoo_month_inci</span> <span class='op'>&lt;-</span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/incidence2/man/build_incidence.html'>build_incidence</a></span><span class='op'>(</span>
+    <span class='va'>dat</span>,
+    date_index <span class='op'>=</span> <span class='va'>date</span>,
+    groups <span class='op'>=</span> <span class='va'>region</span>,
+    counts <span class='op'>=</span> <span class='fu'>ends_with</span><span class='op'>(</span><span class='st'>"new"</span><span class='op'>)</span>,
+    FUN <span class='op'>=</span> <span class='va'>as.yearmon</span>
+  <span class='op'>)</span>
+<span class='va'>zoo_month_inci</span>
+</code></pre>
+</div>
+<pre><code>An incidence object: 171 x 7
+date range: [Jan 2020] to [Jul 2021]
+cases_new: 4322630
+deaths_new: 112182
+recovered_new: 0
+hosp_new: 0
+tested_new: 0
+
+   date_index region       cases_new deaths_new recovered_new hosp_new
+   &lt;yearmon&gt;  &lt;chr&gt;            &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;    &lt;dbl&gt;
+ 1 Jan 2020   East Midlan…         0          0             0        0
+ 2 Jan 2020   East of Eng…         0          0             0        0
+ 3 Jan 2020   London               0          0             0        0
+ 4 Jan 2020   North East           0          0             0        0
+ 5 Jan 2020   North West           0          0             0        0
+ 6 Jan 2020   South East           0          0             0        0
+ 7 Jan 2020   South West           0          0             0        0
+ 8 Jan 2020   West Midlan…         0          0             0        0
+ 9 Jan 2020   Yorkshire a…         1          0             0        0
+10 Feb 2020   East Midlan…         4          0             0        0
+# … with 161 more rows, and 1 more variable: tested_new &lt;dbl&gt;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># comparing the above to the grates implementation</span>
+<span class='va'>grates_month_inci</span> <span class='op'>&lt;-</span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/incidence2/man/incidence.html'>incidence</a></span><span class='op'>(</span>
+    <span class='va'>dat</span>,
+    date_index <span class='op'>=</span> <span class='va'>date</span>,
+    groups <span class='op'>=</span> <span class='va'>region</span>,
+    counts <span class='op'>=</span> <span class='fu'>ends_with</span><span class='op'>(</span><span class='st'>"new"</span><span class='op'>)</span>,
+    interval <span class='op'>=</span> <span class='st'>"month"</span>
+  <span class='op'>)</span>
+<span class='va'>grates_month_inci</span>
+</code></pre>
+</div>
+<pre><code>An incidence object: 171 x 7
+date range: [2020-Jan] to [2021-Jul]
+cases_new: 4322630
+deaths_new: 112182
+recovered_new: 0
+hosp_new: 0
+tested_new: 0
+interval: 1 month
+
+   date_index region       cases_new deaths_new recovered_new hosp_new
+       &lt;mnth&gt; &lt;chr&gt;            &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;    &lt;dbl&gt;
+ 1   2020-Jan East Midlan…         0          0             0        0
+ 2   2020-Jan East of Eng…         0          0             0        0
+ 3   2020-Jan London               0          0             0        0
+ 4   2020-Jan North East           0          0             0        0
+ 5   2020-Jan North West           0          0             0        0
+ 6   2020-Jan South East           0          0             0        0
+ 7   2020-Jan South West           0          0             0        0
+ 8   2020-Jan West Midlan…         0          0             0        0
+ 9   2020-Jan Yorkshire a…         1          0             0        0
+10   2020-Feb East Midlan…         4          0             0        0
+# … with 161 more rows, and 1 more variable: tested_new &lt;dbl&gt;</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># and check they are all "equal"</span>
+<span class='va'>clock_month_inci</span><span class='op'>$</span><span class='va'>date_index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/zoo/man/yearmon.html'>as.Date</a></span><span class='op'>(</span><span class='fu'><a href='https://clock.r-lib.org/reference/calendar_widen.html'>calendar_widen</a></span><span class='op'>(</span><span class='va'>clock_month_inci</span><span class='op'>$</span><span class='va'>date_index</span>, <span class='st'>"day"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>zoo_month_inci</span><span class='op'>$</span><span class='va'>date_index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/zoo/man/yearmon.html'>as.Date</a></span><span class='op'>(</span><span class='va'>zoo_month_inci</span><span class='op'>$</span><span class='va'>date_index</span><span class='op'>)</span>
+<span class='va'>grates_month_inci</span><span class='op'>$</span><span class='va'>date_index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/zoo/man/yearmon.html'>as.Date</a></span><span class='op'>(</span><span class='va'>grates_month_inci</span><span class='op'>$</span><span class='va'>date_index</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/base/identical.html'>identical</a></span><span class='op'>(</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>clock_month_inci</span><span class='op'>)</span>,
+  <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>zoo_month_inci</span><span class='op'>)</span>
+<span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] TRUE</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/identical.html'>identical</a></span><span class='op'>(</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>grates_month_inci</span><span class='op'>)</span>,
+  <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>clock_month_inci</span><span class='op'>)</span>
+<span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references hanging-indent" role="doc-bibliography">
+<div id="ref-Routbreaks">
+<p>Jombart, Thibaut, Simon Frost, Pierre Nouvellet, Finlay Campbell, and Bertrand Sudre. 2020. <em>Outbreaks: A Collection of Disease Outbreak Data</em>. <a href="https://CRAN.R-project.org/package=outbreaks">https://CRAN.R-project.org/package=outbreaks</a>.</p>
+</div>
+<div id="ref-Kamvar2019">
+<p>Kamvar, Zhian N., Jun Cai, Juliet R. C. Pulliam, Jakob Schumacher, and Thibaut Jombart. 2019. “Epidemic Curves Made Easy Using the R Package Incidence.” <em>F1000Research</em> 8 (January): 139. <a href="https://doi.org/10.12688/f1000research.18002.1">https://doi.org/10.12688/f1000research.18002.1</a>.</p>
+</div>
+<div id="ref-Rtibble">
+<p>Müller, Kirill, and Hadley Wickham. 2021. <em>Tibble: Simple Data Frames</em>. <a href="https://CRAN.R-project.org/package=tibble">https://CRAN.R-project.org/package=tibble</a>.</p>
+</div>
+<div id="ref-Rcovidregionaldata">
+<p>Palmer, Joseph, Katharine Sherratt, Richard Martin-Nielsen, Jonnie Bevan, Hamish Gibbs, Sebastian Funk, and Sam Abbott. 2021. “Covidregionaldata: Subnational Data for Covid-19 Epidemiology.” <em>Journal of Open Source Software</em> 6 (62): 3290. <a href="https://doi.org/10.5281/zenodo.3957539">https://doi.org/10.5281/zenodo.3957539</a>.</p>
+</div>
+<div id="ref-R">
+<p>R Core Team. 2021. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
+</div>
+<div id="ref-Rgrates">
+<p>Taylor, Tim. 2021a. <em>Grates: Grouped Date Classes</em>. <a href="https://CRAN.R-project.org/package=grates">https://CRAN.R-project.org/package=grates</a>.</p>
+</div>
+<div id="ref-Rincidence2">
+<p>———. 2021b. <em>Incidence2: Compute, Handle and Plot Incidence of Dated Events</em>. <a href="https://CRAN.R-project.org/package=incidence2">https://CRAN.R-project.org/package=incidence2</a>.</p>
+</div>
+<div id="ref-Rclock">
+<p>Vaughan, Davis. 2021. <em>Clock: Date-Time Types and Tools</em>. <a href="https://CRAN.R-project.org/package=clock">https://CRAN.R-project.org/package=clock</a>.</p>
+</div>
+<div id="ref-Rzoo">
+<p>Zeileis, Achim, and Gabor Grothendieck. 2005. “Zoo: S3 Infrastructure for Regular and Irregular Time Series.” <em>Journal of Statistical Software</em> 14 (6): 1–27. <a href="https://doi.org/10.18637/jss.v014.i06">https://doi.org/10.18637/jss.v014.i06</a>.</p>
+</div>
+</div>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>structural information that must remain true for an object to maintain its class when operated on<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2464,7 +1789,12 @@ The <a href="https://www.tidyverse.org">tidyverse</a> team introduced the concep
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom"></div>
+<div class="appendix-bottom">
+<h3 id="references">References</h3>
+<div id="references-listing"></div>
+<h3 id="reuse">Reuse</h3>
+<p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
+</div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->

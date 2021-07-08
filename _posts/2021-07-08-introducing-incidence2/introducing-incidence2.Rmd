@@ -1,0 +1,169 @@
+---
+title: "Introducing incidence2"
+description: |
+  Compute, handle and visualise epicurves.
+author:
+  - name: Tim Taylor
+date: 07-08-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+creative_commons: CC BY
+bibliography: ref.bib
+citation: true
+---
+
+It's been a few months since our first post, ['Welcome to the reconverse'](posts/2021-03-09-welcome-to-the-reconverse/), and, coinciding with the release of version 1.2.0, we thought it a good time to introduce you to the ***incidence2*** package [@Rincidence2] for **R** [@R].
+
+## Background
+During a disease outbreak it is important to collect some basic information on cases in a line list;
+a data structure where each entry describes a unique individual in an epidemiological context.
+Line lists are typically in a tabular format where each row is an individual with a unique ID,
+meta-data describing the individual which are fixed in time (e.g., age, sex, occupation, disease outcome)
+and time-stamped measurements (e.g., date of onset, date of admission, date of disease outcome).
+
+To better understand an outbreak, line lists are often aggregated to produce epidemic curves (epicurves);
+graphs representing the number of new cases over a given time interval (e.g. days, weeks, months).
+The process to convert a line list to an epicurve typically involves four stages:
+
+1. Data cleaning;
+2. time standardisation;
+3. aggregation; and
+4. visualisation.
+
+To assist with the computing and visualisation of epicurves (stages 2 to 4), the **incidence** [@Kamvar2019] package was created.
+Here the term *incidence* was used to refer to the underlying, aggregated data, not the *rate of incidence*.
+Whilst this original implementation worked well it did have some limitations:
+
+* Users were unable to group by more than one variable at a time.
+* Users were also unable to convert pre aggregated data in to the packages' incidence class.
+* Date grouping was only possible using the functions provided within the package.
+  
+***incidence2*** is a re-imagining of the original package, built to address these limitations.
+
+
+## Implementation
+
+With ***incidence2***, incidence objects are constructed as a subclass of [tibble](https://tibble.tidyverse.org/) [@Rtibble], where the following *class invariants*^[structural information that must remain true for an object to maintain its class when operated on] hold true:
+
+* A single column representing the *time index* of the latter counts;
+* one or more columns representing *counts* of a time-stamped measurement;
+* zero or more columns representing *groups*;
+* zero or more columns representing other *associated measurements*; and
+* when considering the time index and group columns, there must be no duplicate rows.
+
+The names of the columns representing the time index, counts, groups and associated measurements are then stored as as attributes of the object.
+
+By building incidence objects on tibbles (which themselves build upon data frames) we benefit from the rich support for these data structures that is present within both 'base' R and the wider package ecosystem.
+
+When constructing incidence objects input can be given as either line list or pre-aggregated data and users have the option to use an "opinionated" approach to date grouping (built on top of the ***grates*** package [@Rgrates]) or to specify there own date grouping function.
+
+
+## How to use
+To illustrate the main package functionality we give three simple examples.
+The first of these uses synthetic line list data from the ***outbreaks*** package [@Routbreaks].
+The second example downloads some Covid-19 case data from the UK's National Health Service via the ***covidregionaldata*** package [@Rcovidregionaldata].
+The third example uses the ***clock*** [@Rclock] and ***zoo*** [@Rzoo] packages to illustrate the use of custom date grouping functions.
+
+### Required packages
+```{r packages}
+library(incidence2)
+library(outbreaks)         # for example 1
+library(covidregionaldata) # for example 2 and 3
+library(clock)             # for example 3
+library(zoo)               # for example 3
+```
+
+### Example 1 - Line list data
+
+```{r example1}
+# get the linelist data
+dat <- ebola_sim_clean$linelist
+
+# a quick visualising the daily onsets
+dat |> incidence(date_of_onset) |> plot()
+
+# calculate the epiweek incidence across hospitals and plot
+dat |> 
+  incidence(
+    date_index = date_of_onset,
+    groups = hospital,
+    interval = "epiweek",
+    na_as_group = FALSE
+  ) |> 
+  print() |> 
+  facet_plot(nrow = 3, color = "white")
+```
+
+### Example 2 - Pre-aggregated data
+```{r example2}
+# get the data and filter out the nations
+dat <- get_regional_data(country = "UK", verbose = FALSE)
+nations <- c("England", "Northern Ireland", "Scotland", "Wales")
+dat <- subset(dat, !region %in% nations)
+
+# calculate iso-weekly new cases across regions and plot
+dat |> 
+  incidence(
+    date_index = date,
+    counts = cases_new,
+    groups = region,
+    interval = "isoweek",
+    na_as_group = FALSE
+  ) |> 
+  print() |> 
+  facet_plot(angle = 45)
+
+```
+
+### Example 3 - User supplied date grouping functions
+```{r example3}
+# month grouping based on clock functions
+clock_month_inci <- 
+  build_incidence(
+    dat,
+    date_index = date,
+    groups = region,
+    counts = ends_with("new"), # tidyselect :)
+    FUN = function(x) calendar_narrow(as_year_month_day(x), precision = "month")
+  )
+clock_month_inci
+
+# month grouping based on using zoo as.yearmon
+zoo_month_inci <- 
+  build_incidence(
+    dat,
+    date_index = date,
+    groups = region,
+    counts = ends_with("new"),
+    FUN = as.yearmon
+  )
+zoo_month_inci
+
+# comparing the above to the grates implementation
+grates_month_inci <- 
+  incidence(
+    dat,
+    date_index = date,
+    groups = region,
+    counts = ends_with("new"),
+    interval = "month"
+  )
+grates_month_inci
+
+# and check they are all "equal"
+clock_month_inci$date_index <- as.Date(calendar_widen(clock_month_inci$date_index, "day"))
+zoo_month_inci$date_index <- as.Date(zoo_month_inci$date_index)
+grates_month_inci$date_index <- as.Date(grates_month_inci$date_index)
+
+identical(
+  as.data.frame(clock_month_inci),
+  as.data.frame(zoo_month_inci)
+)
+
+identical(
+  as.data.frame(grates_month_inci),
+  as.data.frame(clock_month_inci)
+)
+```
