@@ -34,8 +34,7 @@ We work hard to ensure packages within the *reconverse* fulfil three key goals:
 - [Origins](origins.html) for the history behind the *reconverse*.
 
 
-## Acknowledgments {.appendix}
-This is a website is made with the
-[distill package](https://rstudio.github.io/distill/) and uses a custom theme
-by [Desirée De Leon](https://desiree.rbind.io/).
-
+## Acknowledgments: {.appendix}
+&nbsp;
+&nbsp;
+&nbsp; This website is made with the [distill package](https://rstudio.github.io/distill/) and uses a custom theme by [Desirée De Leon](https://desiree.rbind.io/).
