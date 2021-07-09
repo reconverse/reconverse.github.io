@@ -116,8 +116,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta name="citation_reference" content="citation_title=Grates: Grouped date classes;citation_publication_date=2021;citation_author=Tim Taylor"/>
   <meta name="citation_reference" content="citation_title=Outbreaks: A collection of disease outbreak data;citation_publication_date=2020;citation_author=Thibaut Jombart;citation_author=Simon Frost;citation_author=Pierre Nouvellet;citation_author=Finlay Campbell;citation_author=Bertrand Sudre"/>
   <meta name="citation_reference" content="citation_title=Covidregionaldata: Subnational data for covid-19 epidemiology;citation_publication_date=2021;citation_volume=6;citation_doi=10.5281/zenodo.3957539;citation_author=Joseph Palmer;citation_author=Katharine Sherratt;citation_author=Richard Martin-Nielsen;citation_author=Jonnie Bevan;citation_author=Hamish Gibbs;citation_author=Sebastian Funk;citation_author=Sam Abbott"/>
-  <meta name="citation_reference" content="citation_title=Clock: Date-time types and tools;citation_publication_date=2021;citation_author=Davis Vaughan"/>
-  <meta name="citation_reference" content="citation_title=Zoo: S3 infrastructure for regular and irregular time series;citation_publication_date=2005;citation_volume=14;citation_doi=10.18637/jss.v014.i06;citation_author=Achim Zeileis;citation_author=Gabor Grothendieck"/>
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
@@ -126,7 +124,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["introducing-incidence2_files/figure-html5/example1-1.png","introducing-incidence2_files/figure-html5/example1-2.png","introducing-incidence2_files/figure-html5/example2-1.png","ref.bib"]}
+  {"type":"character","attributes":{},"value":["introducing-incidence2_files/anchor-4.2.2/anchor.min.js","introducing-incidence2_files/bowser-1.9.3/bowser.min.js","introducing-incidence2_files/distill-2.2.21/template.v2.js","introducing-incidence2_files/figure-html5/example1-1.png","introducing-incidence2_files/figure-html5/example1-2.png","introducing-incidence2_files/figure-html5/example2-1.png","introducing-incidence2_files/header-attrs-2.9/header-attrs.js","introducing-incidence2_files/jquery-1.11.3/jquery.min.js","introducing-incidence2_files/popper-2.6.0/popper.min.js","introducing-incidence2_files/tippy-6.2.7/tippy-bundle.umd.min.js","introducing-incidence2_files/tippy-6.2.7/tippy-light-border.css","introducing-incidence2_files/tippy-6.2.7/tippy.css","introducing-incidence2_files/tippy-6.2.7/tippy.umd.min.js","introducing-incidence2_files/webcomponents-2.0.0/webcomponents.js","ref.bib"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1518,7 +1516,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>By building incidence objects on tibbles (which themselves build upon data frames) we benefit from the rich support for these data structures that is present within both ‘base’ R and the wider package ecosystem.</p>
 <p>When constructing incidence objects input can be given as either line list or pre-aggregated data and users have the option to use an “opinionated” approach to date grouping (built on top of the <strong><em>grates</em></strong> package <span class="citation" data-cites="Rgrates">(Taylor <a href="#ref-Rgrates" role="doc-biblioref">2021</a><a href="#ref-Rgrates" role="doc-biblioref">a</a>)</span>) or to specify there own date grouping function.</p>
 <h2 id="how-to-use">How to use</h2>
-<p>To illustrate the main package functionality we give three simple examples. The first of these uses synthetic line list data from the <strong><em>outbreaks</em></strong> package <span class="citation" data-cites="Routbreaks">(Jombart et al. <a href="#ref-Routbreaks" role="doc-biblioref">2020</a>)</span>. The second example downloads some Covid-19 case data from the UK’s National Health Service via the <strong><em>covidregionaldata</em></strong> package <span class="citation" data-cites="Rcovidregionaldata">(Palmer et al. <a href="#ref-Rcovidregionaldata" role="doc-biblioref">2021</a>)</span>. The third example uses the <strong><em>clock</em></strong> <span class="citation" data-cites="Rclock">(Vaughan <a href="#ref-Rclock" role="doc-biblioref">2021</a>)</span> and <strong><em>zoo</em></strong> <span class="citation" data-cites="Rzoo">(Zeileis and Grothendieck <a href="#ref-Rzoo" role="doc-biblioref">2005</a>)</span> packages to illustrate the use of custom date grouping functions.</p>
+<h2 id="examples">Examples</h2>
+<p>To illustrate the main package functionality we give two simple examples. The first example of these uses synthetic line list data from the <strong><em>outbreaks</em></strong> package <span class="citation" data-cites="Routbreaks">(Jombart et al. <a href="#ref-Routbreaks" role="doc-biblioref">2020</a>)</span> whilst the second example downloads some Covid-19 case data from the UK’s National Health Service via the <strong><em>covidregionaldata</em></strong> package <span class="citation" data-cites="Rcovidregionaldata">(Palmer et al. <a href="#ref-Rcovidregionaldata" role="doc-biblioref">2021</a>)</span>.</p>
 <h3 id="required-packages">Required packages</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -1615,134 +1614,15 @@ interval: 1 (Monday) week
 # … with 674 more rows</code></pre>
 <p><img src="introducing-incidence2_files/figure-html5/example2-1.png" width="624" /></p>
 </div>
-<h3 id="example-3---user-supplied-date-grouping-functions">Example 3 - User supplied date grouping functions</h3>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># month grouping based on clock functions</span>
-<span class='va'>clock_month_inci</span> <span class='op'>&lt;-</span> 
-  <span class='fu'><a href='https://rdrr.io/pkg/incidence2/man/build_incidence.html'>build_incidence</a></span><span class='op'>(</span>
-    <span class='va'>dat</span>,
-    date_index <span class='op'>=</span> <span class='va'>date</span>,
-    groups <span class='op'>=</span> <span class='va'>region</span>,
-    counts <span class='op'>=</span> <span class='fu'>ends_with</span><span class='op'>(</span><span class='st'>"new"</span><span class='op'>)</span>, <span class='co'># tidyselect :)</span>
-    FUN <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='fu'><a href='https://clock.r-lib.org/reference/calendar_narrow.html'>calendar_narrow</a></span><span class='op'>(</span><span class='fu'><a href='https://clock.r-lib.org/reference/as_year_month_day.html'>as_year_month_day</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>, precision <span class='op'>=</span> <span class='st'>"month"</span><span class='op'>)</span>
-  <span class='op'>)</span>
-<span class='va'>clock_month_inci</span>
-</code></pre>
-</div>
-<pre><code>An incidence object: 171 x 7
-date range: [2020-01] to [2021-07]
-cases_new: 4322630
-deaths_new: 112182
-recovered_new: 0
-hosp_new: 0
-tested_new: 0
-
-   date_index  region      cases_new deaths_new recovered_new hosp_new
-   &lt;ymd&lt;month&gt; &lt;chr&gt;           &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;    &lt;dbl&gt;
- 1 2020-01     East Midla…         0          0             0        0
- 2 2020-01     East of En…         0          0             0        0
- 3 2020-01     London              0          0             0        0
- 4 2020-01     North East          0          0             0        0
- 5 2020-01     North West          0          0             0        0
- 6 2020-01     South East          0          0             0        0
- 7 2020-01     South West          0          0             0        0
- 8 2020-01     West Midla…         0          0             0        0
- 9 2020-01     Yorkshire …         1          0             0        0
-10 2020-02     East Midla…         4          0             0        0
-# … with 161 more rows, and 1 more variable: tested_new &lt;dbl&gt;</code></pre>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># month grouping based on using zoo as.yearmon</span>
-<span class='va'>zoo_month_inci</span> <span class='op'>&lt;-</span> 
-  <span class='fu'><a href='https://rdrr.io/pkg/incidence2/man/build_incidence.html'>build_incidence</a></span><span class='op'>(</span>
-    <span class='va'>dat</span>,
-    date_index <span class='op'>=</span> <span class='va'>date</span>,
-    groups <span class='op'>=</span> <span class='va'>region</span>,
-    counts <span class='op'>=</span> <span class='fu'>ends_with</span><span class='op'>(</span><span class='st'>"new"</span><span class='op'>)</span>,
-    FUN <span class='op'>=</span> <span class='va'>as.yearmon</span>
-  <span class='op'>)</span>
-<span class='va'>zoo_month_inci</span>
-</code></pre>
-</div>
-<pre><code>An incidence object: 171 x 7
-date range: [Jan 2020] to [Jul 2021]
-cases_new: 4322630
-deaths_new: 112182
-recovered_new: 0
-hosp_new: 0
-tested_new: 0
-
-   date_index region       cases_new deaths_new recovered_new hosp_new
-   &lt;yearmon&gt;  &lt;chr&gt;            &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;    &lt;dbl&gt;
- 1 Jan 2020   East Midlan…         0          0             0        0
- 2 Jan 2020   East of Eng…         0          0             0        0
- 3 Jan 2020   London               0          0             0        0
- 4 Jan 2020   North East           0          0             0        0
- 5 Jan 2020   North West           0          0             0        0
- 6 Jan 2020   South East           0          0             0        0
- 7 Jan 2020   South West           0          0             0        0
- 8 Jan 2020   West Midlan…         0          0             0        0
- 9 Jan 2020   Yorkshire a…         1          0             0        0
-10 Feb 2020   East Midlan…         4          0             0        0
-# … with 161 more rows, and 1 more variable: tested_new &lt;dbl&gt;</code></pre>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># comparing the above to the grates implementation</span>
-<span class='va'>grates_month_inci</span> <span class='op'>&lt;-</span> 
-  <span class='fu'><a href='https://rdrr.io/pkg/incidence2/man/incidence.html'>incidence</a></span><span class='op'>(</span>
-    <span class='va'>dat</span>,
-    date_index <span class='op'>=</span> <span class='va'>date</span>,
-    groups <span class='op'>=</span> <span class='va'>region</span>,
-    counts <span class='op'>=</span> <span class='fu'>ends_with</span><span class='op'>(</span><span class='st'>"new"</span><span class='op'>)</span>,
-    interval <span class='op'>=</span> <span class='st'>"month"</span>
-  <span class='op'>)</span>
-<span class='va'>grates_month_inci</span>
-</code></pre>
-</div>
-<pre><code>An incidence object: 171 x 7
-date range: [2020-Jan] to [2021-Jul]
-cases_new: 4322630
-deaths_new: 112182
-recovered_new: 0
-hosp_new: 0
-tested_new: 0
-interval: 1 month
-
-   date_index region       cases_new deaths_new recovered_new hosp_new
-       &lt;mnth&gt; &lt;chr&gt;            &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;    &lt;dbl&gt;
- 1   2020-Jan East Midlan…         0          0             0        0
- 2   2020-Jan East of Eng…         0          0             0        0
- 3   2020-Jan London               0          0             0        0
- 4   2020-Jan North East           0          0             0        0
- 5   2020-Jan North West           0          0             0        0
- 6   2020-Jan South East           0          0             0        0
- 7   2020-Jan South West           0          0             0        0
- 8   2020-Jan West Midlan…         0          0             0        0
- 9   2020-Jan Yorkshire a…         1          0             0        0
-10   2020-Feb East Midlan…         4          0             0        0
-# … with 161 more rows, and 1 more variable: tested_new &lt;dbl&gt;</code></pre>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># and check they are all "equal"</span>
-<span class='va'>clock_month_inci</span><span class='op'>$</span><span class='va'>date_index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/zoo/man/yearmon.html'>as.Date</a></span><span class='op'>(</span><span class='fu'><a href='https://clock.r-lib.org/reference/calendar_widen.html'>calendar_widen</a></span><span class='op'>(</span><span class='va'>clock_month_inci</span><span class='op'>$</span><span class='va'>date_index</span>, <span class='st'>"day"</span><span class='op'>)</span><span class='op'>)</span>
-<span class='va'>zoo_month_inci</span><span class='op'>$</span><span class='va'>date_index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/zoo/man/yearmon.html'>as.Date</a></span><span class='op'>(</span><span class='va'>zoo_month_inci</span><span class='op'>$</span><span class='va'>date_index</span><span class='op'>)</span>
-<span class='va'>grates_month_inci</span><span class='op'>$</span><span class='va'>date_index</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/zoo/man/yearmon.html'>as.Date</a></span><span class='op'>(</span><span class='va'>grates_month_inci</span><span class='op'>$</span><span class='va'>date_index</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/identical.html'>identical</a></span><span class='op'>(</span>
-  <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>clock_month_inci</span><span class='op'>)</span>,
-  <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>zoo_month_inci</span><span class='op'>)</span>
-<span class='op'>)</span>
-</code></pre>
-</div>
-<pre><code>[1] TRUE</code></pre>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/identical.html'>identical</a></span><span class='op'>(</span>
-  <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>grates_month_inci</span><span class='op'>)</span>,
-  <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>clock_month_inci</span><span class='op'>)</span>
-<span class='op'>)</span>
-</code></pre>
-</div>
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h2 id="final-thoughts">Final thoughts</h2>
+<p>Hopefully this short post gave you a taster of what <strong><em>incidence2</em></strong> is about and why it is useful. For more information, including details on manipulating incidence objects, customizing the default plots, and using custom functions for date grouping, I recommend consulting the vignettes distributed with the package:</p>
+<ul>
+<li><a href="https://www.reconverse.org/incidence2/articles/Introduction.html"><code>vignette("Introduction", package = "incidence2")</code></a></li>
+<li><a href="https://www.reconverse.org/incidence2/articles/handling_incidence_objects.html"><code>vignette("handling_incidence_objects", package = "incidence2")</code></a></li>
+<li><a href="https://www.reconverse.org/incidence2/articles/customizing_incidence_plots.html"><code>vignette("customizing_incidence_plots", package = "incidence2")</code></a></li>
+<li><a href="https://www.reconverse.org/incidence2/articles/Alternative_date_groupings.html"><code>vignette("alternative_date_groupings", package = "incidence2")</code></a></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <div id="refs" class="references hanging-indent" role="doc-bibliography">
 <div id="ref-Routbreaks">
 <p>Jombart, Thibaut, Simon Frost, Pierre Nouvellet, Finlay Campbell, and Bertrand Sudre. 2020. <em>Outbreaks: A Collection of Disease Outbreak Data</em>. <a href="https://CRAN.R-project.org/package=outbreaks">https://CRAN.R-project.org/package=outbreaks</a>.</p>
@@ -1764,12 +1644,6 @@ interval: 1 month
 </div>
 <div id="ref-Rincidence2">
 <p>———. 2021b. <em>Incidence2: Compute, Handle and Plot Incidence of Dated Events</em>. <a href="https://CRAN.R-project.org/package=incidence2">https://CRAN.R-project.org/package=incidence2</a>.</p>
-</div>
-<div id="ref-Rclock">
-<p>Vaughan, Davis. 2021. <em>Clock: Date-Time Types and Tools</em>. <a href="https://CRAN.R-project.org/package=clock">https://CRAN.R-project.org/package=clock</a>.</p>
-</div>
-<div id="ref-Rzoo">
-<p>Zeileis, Achim, and Gabor Grothendieck. 2005. “Zoo: S3 Infrastructure for Regular and Irregular Time Series.” <em>Journal of Statistical Software</em> 14 (6): 1–27. <a href="https://doi.org/10.18637/jss.v014.i06">https://doi.org/10.18637/jss.v014.i06</a>.</p>
 </div>
 </div>
 <section class="footnotes" role="doc-endnotes">

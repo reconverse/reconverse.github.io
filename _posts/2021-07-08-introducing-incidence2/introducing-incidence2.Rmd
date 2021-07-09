@@ -59,12 +59,11 @@ By building incidence objects on tibbles (which themselves build upon data frame
 
 When constructing incidence objects input can be given as either line list or pre-aggregated data and users have the option to use an "opinionated" approach to date grouping (built on top of the ***grates*** package [@Rgrates]) or to specify there own date grouping function.
 
-
 ## How to use
-To illustrate the main package functionality we give three simple examples.
-The first of these uses synthetic line list data from the ***outbreaks*** package [@Routbreaks].
-The second example downloads some Covid-19 case data from the UK's National Health Service via the ***covidregionaldata*** package [@Rcovidregionaldata].
-The third example uses the ***clock*** [@Rclock] and ***zoo*** [@Rzoo] packages to illustrate the use of custom date grouping functions.
+
+## Examples
+To illustrate the main package functionality we give two simple examples.
+The first example of these uses synthetic line list data from the ***outbreaks*** package [@Routbreaks] whilst the second example downloads some Covid-19 case data from the UK's National Health Service via the ***covidregionaldata*** package [@Rcovidregionaldata].
 
 ### Required packages
 ```{r packages}
@@ -117,53 +116,11 @@ dat |>
 
 ```
 
-### Example 3 - User supplied date grouping functions
-```{r example3}
-# month grouping based on clock functions
-clock_month_inci <- 
-  build_incidence(
-    dat,
-    date_index = date,
-    groups = region,
-    counts = ends_with("new"), # tidyselect :)
-    FUN = function(x) calendar_narrow(as_year_month_day(x), precision = "month")
-  )
-clock_month_inci
+## Final thoughts
+Hopefully this short post gave you a taster of what ***incidence2*** is about and why it is useful.
+For more information, including details on manipulating incidence objects, customizing the default plots, and using custom functions for date grouping, I recommend consulting the vignettes distributed with the package:
 
-# month grouping based on using zoo as.yearmon
-zoo_month_inci <- 
-  build_incidence(
-    dat,
-    date_index = date,
-    groups = region,
-    counts = ends_with("new"),
-    FUN = as.yearmon
-  )
-zoo_month_inci
-
-# comparing the above to the grates implementation
-grates_month_inci <- 
-  incidence(
-    dat,
-    date_index = date,
-    groups = region,
-    counts = ends_with("new"),
-    interval = "month"
-  )
-grates_month_inci
-
-# and check they are all "equal"
-clock_month_inci$date_index <- as.Date(calendar_widen(clock_month_inci$date_index, "day"))
-zoo_month_inci$date_index <- as.Date(zoo_month_inci$date_index)
-grates_month_inci$date_index <- as.Date(grates_month_inci$date_index)
-
-identical(
-  as.data.frame(clock_month_inci),
-  as.data.frame(zoo_month_inci)
-)
-
-identical(
-  as.data.frame(grates_month_inci),
-  as.data.frame(clock_month_inci)
-)
-```
+* [`vignette("Introduction", package = "incidence2")`](https://www.reconverse.org/incidence2/articles/Introduction.html)
+* [`vignette("handling_incidence_objects", package = "incidence2")`](https://www.reconverse.org/incidence2/articles/handling_incidence_objects.html)
+* [`vignette("customizing_incidence_plots", package = "incidence2")`](https://www.reconverse.org/incidence2/articles/customizing_incidence_plots.html)
+* [`vignette("alternative_date_groupings", package = "incidence2")`](https://www.reconverse.org/incidence2/articles/Alternative_date_groupings.html)
