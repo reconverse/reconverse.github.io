@@ -69,9 +69,7 @@ The first example of these uses synthetic line list data from the ***outbreaks**
 ```{r packages}
 library(incidence2)
 library(outbreaks)         # for example 1
-library(covidregionaldata) # for example 2 and 3
-library(clock)             # for example 3
-library(zoo)               # for example 3
+library(covidregionaldata) # for example 2
 ```
 
 ### Example 1 - Line list data
