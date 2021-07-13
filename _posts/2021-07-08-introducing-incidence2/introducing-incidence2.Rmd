@@ -4,7 +4,7 @@ description: |
   Compute, handle and visualise epicurves.
 author:
   - name: Tim Taylor
-date: 07-08-2021
+date: 07-13-2021
 output:
   distill::distill_article:
     self_contained: false
@@ -27,17 +27,17 @@ To better understand an outbreak, line lists are often aggregated to produce epi
 graphs representing the number of new cases over a given time interval (e.g. days, weeks, months).
 The process to convert a line list to an epicurve typically involves four stages:
 
-1. Data cleaning;
-2. time standardisation;
-3. aggregation; and
-4. visualisation.
+1. Data cleaning
+2. Time standardisation
+3. Aggregation
+4. Visualisation
 
 To assist with the computing and visualisation of epicurves (stages 2 to 4), the **incidence** [@Kamvar2019] package was created.
 Here the term *incidence* was used to refer to the underlying, aggregated data, not the *rate of incidence*.
 Whilst this original implementation worked well it did have some limitations:
 
 * Users were unable to group by more than one variable at a time.
-* Users were also unable to convert pre aggregated data in to the packages' incidence class.
+* Users were also unable to convert pre aggregated data in to the packages' incidence class
 * Date grouping was only possible using the functions provided within the package.
   
 ***incidence2*** is a re-imagining of the original package, built to address these limitations.
@@ -47,7 +47,7 @@ Whilst this original implementation worked well it did have some limitations:
 
 With ***incidence2***, incidence objects are constructed as a subclass of [tibble](https://tibble.tidyverse.org/) [@Rtibble], where the following *class invariants*^[structural information that must remain true for an object to maintain its class when operated on] hold true:
 
-* A single column representing the *time index* of the latter counts;
+* there is a single column representing the *time index* of the latter counts;
 * one or more columns representing *counts* of a time-stamped measurement;
 * zero or more columns representing *groups*;
 * zero or more columns representing other *associated measurements*; and
@@ -112,7 +112,7 @@ dat |>
     na_as_group = FALSE
   ) |> 
   print() |> 
-  facet_plot(angle = 45)
+  facet_plot(angle = 45, n.breaks = 6)
 
 ```
 
