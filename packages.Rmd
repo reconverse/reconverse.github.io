@@ -44,7 +44,7 @@ and storing outputs in well-organised, timestamped folders.
 ```{r, results="asis"}
 cat("![](images/badge-maturing.svg)\n")
 ```
-[trending](https://www.repidemicsconsortium.org/trending/) provides a coherent interface
+[trending](https://www.reconverse.org/trending/) provides a coherent interface
 to specifying common models and facilitate the easy generation of confidence and
 prediction intervals. Whilst it is useful in an interactive context, it’s main
 focus is to provide an intuitive interface on which other packages can be
@@ -55,8 +55,8 @@ developed.
 ```{r, results="asis"}
 cat("![](images/badge-experimental.svg)\n")
 ```
-[trendeval](https://www.repidemicsconsortium.org/trendeval/) provides an interface for
-evaluating models fit with the [trending](https://www.repidemicsconsortium.org/trending/)
+[trendeval](https://www.reconverse.org/trendeval/) provides an interface for
+evaluating models fit with the [trending](https://www.reconverse.org/trending/)
 package.
 
 
