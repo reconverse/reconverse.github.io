@@ -7,7 +7,16 @@
     <description>A coherent ecosystem  of R packages for outbreak analytics.
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 09 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Introducing incidence2</title>
+      <dc:creator>Tim Taylor</dc:creator>
+      <link>https://www.reconverse.org/posts/2021-07-13-introducing-incidence2</link>
+      <description>Compute, handle and visualise epicurves.</description>
+      <guid>https://www.reconverse.org/posts/2021-07-13-introducing-incidence2</guid>
+      <pubDate>Tue, 13 Jul 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://www.reconverse.org/posts/2021-07-13-introducing-incidence2/introducing-incidence2_files/figure-html5/example1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Welcome to the reconverse</title>
       <dc:creator>Thibaut Jombart</dc:creator>

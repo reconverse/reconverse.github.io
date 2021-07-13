@@ -5,6 +5,11 @@ description: |
 site: distill::distill_website
 ---
 
+## Latest news:
+
+- July 13, 2021 - [Introducing incidence2](posts/2021-07-13-introducing-incidence2/)
+
+
 ## Overview
 
 The *reconverse* aims to provide a coherent and composable suite of analytics
@@ -21,9 +26,6 @@ We work hard to ensure packages within the *reconverse* fulfil three key goals:
 - Accessibility: Packages are free, open-source, and available on virtually any
   platform; and can be used with different levels of expertise.
 
-## Latest news:
-
-- March 9, 2021 - [Welcome to the reconverse](posts/2021-03-09-welcome-to-the-reconverse/)
 
 ## Further information
 

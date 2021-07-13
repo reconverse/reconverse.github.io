@@ -5,22 +5,22 @@
       "title": "Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-07-09T09:25:54+01:00"
+      "last_modified": "2021-07-13T13:42:29+01:00"
     },
     {
       "path": "index.html",
       "title": "Reconverse",
       "description": "A coherent ecosystem  of R packages for outbreak analytics\n",
       "author": [],
-      "contents": "\nOverview\nThe reconverse aims to provide a coherent and composable suite of analytics tools for informing the response to disease outbreaks, health emergencies and humanitarian crises, using the R software environment.\nWe work hard to ensure packages within the reconverse fulfil three key goals:\nEfficiency: Packages can be used in real time to improve situation awareness and inform intervention strategies.\nReliability: Packages are thoroughly and constantly tested using professional software development methods.\nAccessibility: Packages are free, open-source, and available on virtually any platform; and can be used with different levels of expertise.\nLatest news:\nMarch 9, 2021 - Welcome to the reconverse\nFurther information\nthe blog for the posts about the reconverse;\nPackages for an overview of the ecosystem;\nLifecycle for a description on how we describe package maturity; and\nOrigins for the history behind the reconverse.\nAcknowledgments:\n      This website is made with the distill package and uses a custom theme by Desirée De Leon.\n\n\n\n",
-      "last_modified": "2021-07-09T09:25:55+01:00"
+      "contents": "\nLatest news:\nJuly 13, 2021 - Introducing incidence2\nOverview\nThe reconverse aims to provide a coherent and composable suite of analytics tools for informing the response to disease outbreaks, health emergencies and humanitarian crises, using the R software environment.\nWe work hard to ensure packages within the reconverse fulfil three key goals:\nEfficiency: Packages can be used in real time to improve situation awareness and inform intervention strategies.\nReliability: Packages are thoroughly and constantly tested using professional software development methods.\nAccessibility: Packages are free, open-source, and available on virtually any platform; and can be used with different levels of expertise.\nFurther information\nthe blog for the posts about the reconverse;\nPackages for an overview of the ecosystem;\nLifecycle for a description on how we describe package maturity; and\nOrigins for the history behind the reconverse.\nAcknowledgments:\n      This website is made with the distill package and uses a custom theme by Desirée De Leon.\n\n\n\n",
+      "last_modified": "2021-07-13T13:42:29+01:00"
     },
     {
       "path": "lifecycle.html",
       "title": "Lifecycle",
       "author": [],
       "contents": "\nWhen a user considers utilising a package in their work it is helpful to provide them with information on the development plans around the package. This allows them to make an informed decision as to whether they want to take that package as a dependency. To help users understand the development status of a package we use lifecycle badges to relay one of 4 stages of package maturity; concept, experimental, maturing and stable:\n\nThe tidyverse team introduced the concept of a package (or function) lifecycle. Our approach is less granular (we do not consider individual functions) and uses slightly different semantics but is still similar in nature.\n\n\n\nConcept\nInitial ideas of what the package will be, maybe some gist of code and discussions among developpers, but not much more.\nExperimental\nDraft of a functional package, but interfaces and functionalities may change over time, testing and documentation maye be lacking. Typically semantic version < 0.1.0.\nMaturing\nPackage is functional, documented and tested. Can be used in production with the understanding that the interface may still undergo minor changes. Typically semantic version < 1.0.0.\nStable\nPackage is functional, documented and tested. The interface is not meant to change in the future. Can be used in production and relied upon by other packages. Typically semantic version >= 1.0.0.\nContributing\nMore info coming soon!\n\n\n\n",
-      "last_modified": "2021-07-09T09:25:55+01:00"
+      "last_modified": "2021-07-13T13:42:29+01:00"
     },
     {
       "path": "origins.html",
@@ -28,14 +28,14 @@
       "description": "Details about the reconverse",
       "author": [],
       "contents": "\nOverview\nMembers of the R Epidemics Consortium have, for many years, been creating resources and software that could be used to inform the response to disease outbreaks, health emergencies and humanitarian crises. During this time, as well as providing training materials, running workshops and having members deployed to the field to help with data analytics, a variety of R packages have been created to enable analysts to quickly solve the problems they have (e.g. epicontacts, epiestim, incidence).\nSince the early days of RECON, the landscape of packages for the analysis of epidemics has grown, evolved and diversified, benefiting from feedback and contributions from our members as well as other groups. While such organic growth was needed and resulted in overall improvements of available tools, it has also led to a less consistent software landscape, with several packages overlapping or duplicating efforts, limited interoperability, and varying coding and development standards. Being aware that fragmented software landscapes can be the bane of data scientists (e.g. Excoffier and Heckel 2006, we realise there is also benefit to having a coherent and composable set of packages for users. The reconverse aims to address this. Much like the tidyverse is “an opinionated collection of R packages designed for data science”, the reconverse aims to be an opinionated ecosystem of packages for Outbreak Analytics.\n\n\n\n",
-      "last_modified": "2021-07-09T09:25:56+01:00"
+      "last_modified": "2021-07-13T13:42:30+01:00"
     },
     {
       "path": "packages.html",
       "title": "Packages",
       "author": [],
       "contents": "\n\nContents\nincidence2\ni2extras\nreportfactory\ntrending\ntrendeval\n\nincidence2\n\n\n\nincidence2 Provides functions and classes to compute, handle and visualise incidence from dated events for a defined time interval. Dates can be provided in various standard formats. The class ‘incidence2’ is used to store computed incidence and can be easily manipulated, subsetted, and plotted.\ni2extras\n\n\n\ni2extras Provides additional functionality to the incidence2 package, including curve fitting, growth rate calculations and peak estimation.\nreportfactory\n\n\n\nreportfactory facilitates workflows for handling multiple .Rmd reports, compiling one or several reports in one go, and storing outputs in well-organised, timestamped folders.\ntrending\n\n\n\ntrending provides a coherent interface to specifying common models and facilitate the easy generation of confidence and prediction intervals. Whilst it is useful in an interactive context, it’s main focus is to provide an intuitive interface on which other packages can be developed.\ntrendeval\n\n\n\ntrendeval provides an interface for evaluating models fit with the trending package.\n\n\n\n",
-      "last_modified": "2021-07-09T09:25:56+01:00"
+      "last_modified": "2021-07-13T13:42:30+01:00"
     }
   ],
   "collections": ["posts/posts.json"]
