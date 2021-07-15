@@ -14,7 +14,7 @@ bibliography: ref.bib
 citation: true
 ---
 
-It's been a few months since our first post, ['Welcome to the reconverse'](posts/2021-03-09-welcome-to-the-reconverse/), and, coinciding with the release of version 1.2.0, we thought it a good time to introduce you to the ***incidence2*** package [@Rincidence2].
+It's been a few months since our first post, ['Welcome to the reconverse'](../2021-03-09-welcome-to-the-reconverse/), and, coinciding with the release of version 1.2.0, we thought it a good time to introduce you to the ***incidence2*** package [@Rincidence2].
 
 ## Background
 During a disease outbreak it is important to collect some basic information on cases in a line list;
