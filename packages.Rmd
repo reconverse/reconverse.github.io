@@ -11,11 +11,18 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
+## grates
+```{r, results="asis"}
+cat("![](images/badge-maturing.svg)\n")
+```
+[grates](https://www.reconverse.org/grates/) provides a coherent interface and
+implementation for creating grouped date classes.
+
 ## incidence2
 ```{r, results="asis"}
 cat("![](images/badge-stable.svg)\n")
 ```
-[incidence2](https://www.reconverse.org/incidence2/) Provides functions and
+[incidence2](https://www.reconverse.org/incidence2/) provides functions and
 classes to compute, handle and visualise incidence from dated events for a
 defined time interval. Dates can be provided in various standard formats. The
 class 'incidence2' is used to store computed incidence and can be easily
@@ -26,10 +33,18 @@ manipulated, subsetted, and plotted.
 ```{r, results="asis"}
 cat("![](images/badge-maturing.svg)\n")
 ```
-[i2extras](https://www.reconverse.org/i2extras/) Provides additional
+[i2extras](https://www.reconverse.org/i2extras/) provides additional
 functionality to the [incidence2](https://www.reconverse.org/incidence2/)
 package, including curve fitting, growth rate calculations and peak estimation.
 
+## outbreaks
+```{r, results="asis"}
+cat("![](images/badge-stable.svg)\n")
+```
+[outbreaks](https://www.reconverse.org/outbreaks/) compiles a series of
+publicly available disease outbreak data. Data can be provided as R objects
+(loaded automatically when loading the package), text files distributed
+alongside the package, or functions generating a dataset.
 
 ## reportfactory
 ```{r, results="asis"}
@@ -58,15 +73,3 @@ cat("![](images/badge-experimental.svg)\n")
 [trendeval](https://www.reconverse.org/trendeval/) provides an interface for
 evaluating models fit with the [trending](https://www.reconverse.org/trending/)
 package.
-
-
-
-
-
-
-
-
-
-
-
-
